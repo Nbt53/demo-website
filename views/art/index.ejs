@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate') %>
+<div><a href="/art/new">New art</a></div>
+
+<% for(let i = 0; i <art.length; i++){ %> 
+    <div class="card" style="width: 18rem;">
+        <img src="<%= art[i].image.url %> " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= art[i].title %> </h5>
+          <p class="card-text"><%= art[i].description %> </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    <% } %> 
