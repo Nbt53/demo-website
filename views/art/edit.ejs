@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>Edit Details for <%= art.title %> </h1>
+
+<form action="/art/<%=art._id %>/edit?_method=PUT" method="POST"  >
+    <div class="sign-form row">
+
+        <label for="title" >title</label>
+        <input type="text" name="art[title]" id="title" value="<%= art.title %>">
+        <label for="price">price</label>
+        <input type="number" name="art[price]" id="price" value="<%= art.price %>">
+        <!-- <label for="image">image</label>
+        <input type="file" name="image" id="image" multiple> -->
+        <label for="description">description</label>
+        <textarea name="art[description]" id="description" cols="5" rows="5" class="w-50 p-3"><%= art.description %></textarea>
+
+        <button class="btn btn-success btn-block">Update</button>
+
+    </div>
+</form>

@@ -1,14 +1,32 @@
 <% layout('layouts/boilerplate') %>
-<div><a href="/art/new">New art</a></div>
+    <div><a href="/art/new">New art</a></div>
+    <div class="container">
 
-<% for(let i = 0; i <art.length; i++){ %> 
-    <div class="card" style="width: 18rem;">
-        <img src="<%= art[i].image.url %> " class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= art[i].title %> </h5>
-          <p class="card-text"><%= art[i].description %> </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+        <h1>Arts</h1>
 
-    <% } %> 
+        <% for(let a of art) {%>
+            <div class="card mb-3 card-index">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="image">
+                            <% if(a.image.length){ %>
+                                <a href="/art/<%= a._id %>">
+                                    <img src="<%= a.image[0].url%>" alt="" class="img-fluid"></a>
+                                <% }else{ %>
+                                    <img src="https://res.cloudinary.com/djj2nhj8d/image/upload/v1670015214/YelpCamp/zshtmbowhix1ihrmytfu.png"
+                                        alt="" class="img-fluid">
+                                    <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body"></div>
+                        <h5>
+                            <div class="card-title">
+                                <%= a.title %>
+                            </div>
+                    </div>
+                    </h5>
+                </div>
+            </div>
+            <%} %>
+    </div>

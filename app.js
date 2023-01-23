@@ -10,6 +10,7 @@ const ejsMate = require('ejs-mate');
 const path = require('path');
 const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash')
+const methodOverride = require('method-override');
 // passport for log in
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -37,6 +38,7 @@ const sessionConfig = {
 }
 
 app.use(session(sessionConfig));
+app.use(methodOverride('_method'))
 
 //flash middleware
 app.use(flash());

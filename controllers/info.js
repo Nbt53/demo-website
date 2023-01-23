@@ -1,5 +1,9 @@
-module.exports.home = (req, res) => {
-    res.render('info/home')
+const Art = require("../models/art")
+
+
+module.exports.home = async(req, res) => {
+    const art = await  Art.find({})
+    res.render('info/home', {art})
 }
 
 module.exports.pricing = (req, res) =>{

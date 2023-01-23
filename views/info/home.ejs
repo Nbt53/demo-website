@@ -1,10 +1,9 @@
 <% layout('layouts/boilerplate') %>
     <div class="container"></div>
-    <div class="row" style="display: inline-block;">
+    <div class="row">
         <div class="col-4">
-            <img src="/images/oneart.jpg " alt="">
+            <img src="<%= art[0].image[0].url %>" alt="">
         </div>
-
         <div class="col-3 ms-auto">
             <h2> Art of the day</h2>
             <p>Here is an art of the day. Look at it, all the little bits!
@@ -16,7 +15,7 @@
             <a href="#">Buy it on a shirt</a> £24.99 <br>
             buy me a coffee <a href="#">Ko-fi</a> <br>
             Subscribe to my <a href="#">Only Birds</a><br>
-            Do something <a href="https://www.duckduckgo.com">else</a>
+            Do something <a href="<%  %> ">else</a>
         </div>
 
     </div>
