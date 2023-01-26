@@ -1,5 +1,8 @@
 <% layout('layouts/boilerplate') %>
+
+<% if(currentUser && currentUser.admin === 'on'){ %> 
     <div><a href="/art/new">New art</a></div>
+    <% } %> 
     <div class="container">
 
         <h1>Arts</h1>

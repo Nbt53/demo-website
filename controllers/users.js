@@ -11,14 +11,17 @@ module.exports.login = (req, res) => {
 }
 
 module.exports.signupPost = async (req, res, next) => {
-  
+
     try {
-        const { username, email, password } = req.body;
-        const newUser = new User({ username, email });
+        const { username, email, password, admin } = req.body;
+        const newUser = new User({ username, email, admin });
+        if (!admin) {
+            admin = 'off'
+        }
         const registeredUser = await User.register(newUser, password);
         req.login(registeredUser, err => {
             if (err) return next(err);
-            req.flash('success','user created')
+            req.flash('success', 'user created')
             res.redirect('/')
         })
 
@@ -26,12 +29,13 @@ module.exports.signupPost = async (req, res, next) => {
         console.log(e)
         res.redirect('/signup')
     }
-  
+
 }
 
 module.exports.loginPost = async (req, res) => {
     req.flash('success', 'Welcome back')
-    res.redirect('/')
+    const redirectUrl = req.session.returnTo || '/'
+    res.redirect(redirectUrl)
 }
 
 module.exports.logout = (req, res) => {

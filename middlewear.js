@@ -11,9 +11,8 @@ const isLoggedIn = (req, res, next) => {
 module.exports.isLoggedIn = isLoggedIn;
 
 const isAdmin = (req, res, next) => {
-    // take just the _id
-const user = res.locals.currentUser._id.toHexString()
-    if ('63c941eafe89411ec5ebc81c' != user) {
+    console.log()
+    if (req.isAuthenticated() && req.user.admin != 'on') {
         req.flash('error', 'You do not have permission to do that');
         return res.redirect('/');
     }

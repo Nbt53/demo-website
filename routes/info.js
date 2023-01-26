@@ -8,9 +8,13 @@ router.route('/')
     .get(catchAsync(info.home))
 
 router.route('/pricing')
-    .get(isLoggedIn ,isAdmin, info.pricing)
+    .get(info.pricing)
 
 router.route('/about')
     .get(info.about)
+
+router.route('/admin')
+    .get(isLoggedIn, isAdmin, catchAsync(info.admin))
+    .put(isLoggedIn, isAdmin, catchAsync(info.updateUser))
 
 module.exports = router

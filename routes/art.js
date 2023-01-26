@@ -16,10 +16,10 @@ router.route('/new')
 
 router.route('/:id')
     .get(catchAsync(art.show))
-    .delete(catchAsync(art.delete))
+    .delete(isLoggedIn, isAdmin, catchAsync(art.delete))
 
 router.route('/:id/edit')
-    .get(catchAsync(art.edit))
-    .put(catchAsync(art.editPost))
+    .get(isLoggedIn, isAdmin, catchAsync(art.edit))
+    .put(isLoggedIn, isAdmin, catchAsync(art.editPost))
 
 module.exports = router   

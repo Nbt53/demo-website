@@ -2,7 +2,9 @@
     <div class="container"></div>
     <div class="row">
         <div class="col-4">
-            <img src="<%= art[0].image[0].url %>" alt="">
+            <% let i=Math.floor(Math.random()*art.length + 1) -1 %>
+                <%=art[i].title %>
+                    <img src="<%= art[i].image[0].url %>" alt="">
         </div>
         <div class="col-3 ms-auto">
             <h2> Art of the day</h2>
