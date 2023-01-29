@@ -1,0 +1,38 @@
+.body {
+    text-decoration: none;
+}
+
+.home-title {
+    position: absolute;
+    color: $color-white;
+    top: 40%;
+    left: 40%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 8px $color-shadow;
+
+    &-main {
+        font-family: 'Playfair Display', serif;
+        font-size: 60px;
+        font-weight: 800;
+        letter-spacing: 15px;
+        display: block;
+        animation: moveInLeft 1s;
+    }
+
+    &-sub {
+        font-size: 40px;
+        font-weight: 400;
+        display: block;
+        animation: moveInRight 1s;
+    }
+
+}
+
+.home-nav {
+    text-align: center;
+}
+
+.main-love {
+    letter-spacing: normal;
+}

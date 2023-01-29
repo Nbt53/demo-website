@@ -60,28 +60,30 @@ app.use((req, res, next) => {
 })
 
 //set view engine
-app.engine('ejs', ejsMate)
+app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'views'));
 
 //to use css and js
 app.use(express.static(__dirname + '/public'));
 
 //import routes
-const infoRoutes = require('./routes/info')
+const infoRoutes = require('./routes/info');
 const artRoutes = require('./routes/art');
-const userRoutes = require('./routes/users')
+const userRoutes = require('./routes/users');
+const basketRoutes = require('./routes/basket');
 
 
 // mongoose setup
-mongoose.set({ strictQuery: true })
+mongoose.set({ strictQuery: true });
 mongoose.connect('mongodb://127.0.0.1:27017/art')
   .then(() => console.log('Connected!'));
 
 /// use routes
-app.use('/', infoRoutes)
-app.use('/art', artRoutes)
-app.use('/', userRoutes)
+app.use('/', infoRoutes);
+app.use('/art', artRoutes);
+app.use('/', userRoutes);
+app.use('/basket', basketRoutes);
 
 
 app.all('*', (req, res, next) => {

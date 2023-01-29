@@ -10,15 +10,17 @@
 
                 <label for="email ">E-mail</label>
                 <input type="email" name="email" id="email" value="<%= user.email %>">
-                
+
                 <label for="admin">Admin</label>
                 <input type="checkbox" name="admin" id="admin" <% if(user.admin==='on' ){%> checked <% } %>>
-                
-                <label for="_id">ID</label>
-                <input type="text" name="_id" id="_id" value="<%= user._id %> " readonly
-                    style="background-color: gainsboro;">
 
-                <button class="btn btn-success btn-block" >Signup</button>
+                    <label for="_id">ID</label>
+                    <input type="text" name="_id" id="_id" value="<%= user._id %> " readonly
+                        style="background-color: gainsboro;">
+
+                    <input type="basket" name="basket" id="basket" value="<%= user.basket[0] %> ">
+
+                            <button class="btn btn-success btn-block">Signup</button>
 
             </div>
         </form>

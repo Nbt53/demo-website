@@ -1,0 +1,13 @@
+<% layout('layouts/boilerplate') %>
+
+    Basket: <br>
+    <div class="basket-container">
+        <% for(a of basket){ %>
+            <div class="row">
+                
+                <p>
+                    £<%=a.price %>
+                </p>
+            </div>
+            <% } %>
+    </div>

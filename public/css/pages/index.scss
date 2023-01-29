@@ -1,0 +1,29 @@
+.index-background {
+    background-image: linear-gradient(to right, rgba($color-red-light, $opacity-background), rgba($color-red-dark, $opacity-background)), url(../images/background-home.jpg);
+    margin: 25px;
+    padding: 0;
+    height: 95vh;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    overflow: scroll;
+}
+
+.art-index {
+    height: 100vh;
+
+    &-images {
+        display: inline-block;
+        height: 40%;
+        width: 40%;
+        box-shadow: 0 2px 4px rgb($color-shadow, 0.2);
+        margin: 25px;
+        border-radius: 10px;
+        animation: fromCenter .4s;
+
+        &:hover {
+            transform: scale(110%);
+            box-shadow: 5px 10px 1px rgb($color-shadow, 0.2);
+        }
+    }
+}

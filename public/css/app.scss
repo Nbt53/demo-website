@@ -1,0 +1,45 @@
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+
+@import 'base/base';
+@import 'base/animations';
+@import 'base/utils';
+@import 'base/typography';
+
+@import 'components/button';
+@import 'components/nav';
+
+@import 'pages/home';
+@import 'pages/index';
+
+//To be Restyled
+/* partials */
+.navbar {
+    background-color: #D3D4D9;
+
+    li:hover {
+        box-shadow: 1px 2px 5px #4b88a2;
+    }
+}
+
+/* user */
+.sign-form {
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.sign-form input {
+    max-width: 40%;
+}
+
+/* art */
+
+.img-show {
+    max-width: 100%;
+    max-height: 100vh;
+}

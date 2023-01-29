@@ -22,12 +22,12 @@ module.exports.admin = async (req, res) => {
 }
 
 module.exports.updateUser = async (req, res) => {
-    let { username, email, admin, _id } = req.body
+    let { username, email, admin, _id , basket} = req.body
     if(!admin){
         admin= 'off'
     }
     _id = _id.replace(/\s+/g, '');
-    const updated = { username, email, admin }
+    const updated = { username, email, admin, basket }
     await User.findByIdAndUpdate(_id, { ...updated })
     res.redirect('/admin')
 }

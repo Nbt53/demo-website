@@ -1,24 +1,14 @@
-<% layout('layouts/boilerplate') %>
-    <div class="container"></div>
-    <div class="row">
-        <div class="col-4">
-            <% let i=Math.floor(Math.random()*art.length + 1) -1 %>
-                <%=art[i].title %>
-                    <img src="<%= art[i].image[0].url %>" alt="">
-        </div>
-        <div class="col-3 ms-auto">
-            <h2> Art of the day</h2>
-            <p>Here is an art of the day. Look at it, all the little bits!
-                Does it mean anything? if you say so.
-                There are lots of colors, and things to enjoy seeing.
-                But it on a shirt or something.
-            </p>
-            <hr>
-            <a href="#">Buy it on a shirt</a> £24.99 <br>
-            buy me a coffee <a href="#">Ko-fi</a> <br>
-            Subscribe to my <a href="#">Only Birds</a><br>
-            Do something <a href="<%  %> ">else</a>
-        </div>
+<% layout('layouts/home') %>
+    <div class="home-background">
+        <nav class="home-nav">
+            <img src="/images/lovebirdlogo-white.png" alt="logo" class="home-background-logo">
+            <a href="/" class="button">Home</a>
+            <a href="/art" class="button">Gallery</a>
+            <a href="/about" class="button">about</a>
+        </nav>
+        <h1 class="home-title">
+            <span class="home-title-main"><span class="main-love">&lt;3</span> Bird</span>
+            <span class="home-title-sub">For the love of art</span>
+        </h1>
 
-    </div>
     </div>
