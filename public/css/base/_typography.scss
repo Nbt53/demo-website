@@ -19,6 +19,10 @@
     transform: translate(-50%, -50%);
     text-shadow: 1px 1px 8px $color-shadow;
 
+    &:hover{
+        animation: fire 1s;
+    }
+
     &-main {
     
         font-size: 60px;

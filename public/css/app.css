@@ -145,6 +145,28 @@ html {
     transform: rotate(0deg);
   }
 }
+@-webkit-keyframes fire {
+  0% {
+    text-shadow: 1px 1px 8px #05060F;
+  }
+  50% {
+    text-shadow: 1px 1px 8px red;
+  }
+  100% {
+    text-shadow: 1px 1px 8px #05060F;
+  }
+}
+@keyframes fire {
+  0% {
+    text-shadow: 1px 1px 8px #05060F;
+  }
+  50% {
+    text-shadow: 1px 1px 8px red;
+  }
+  100% {
+    text-shadow: 1px 1px 8px #05060F;
+  }
+}
 .u-center-text {
   text-align: center;
 }
@@ -181,6 +203,10 @@ html {
   text-transform: uppercase;
   transform: translate(-50%, -50%);
   text-shadow: 1px 1px 8px #05060F;
+}
+.primary-title:hover {
+  -webkit-animation: fire 1s;
+          animation: fire 1s;
 }
 .primary-title-main {
   font-size: 60px;
