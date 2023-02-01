@@ -1,0 +1,31 @@
+.service {
+    background-size: cover;
+    transform: skewY(-7deg);
+    padding: 3rem;
+    height: fit-content;
+
+    &-card {
+        margin-top: 8rem;
+        background-color: rgba($color-background-light, 0.6);
+        text-align: center;
+        padding: 2rem;
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(115%);
+            background-color: rgba($color-background-dark, 0.6);
+            box-shadow: 20px 20px 20px rgba($color-background-dark, 0.4);
+        }
+    }
+}
+
+.service>* {
+
+    transform: skewY(7deg);
+}
+
+.card-logo {
+    margin: 2rem 50%;
+    transform: translate(-50%, 0);
+    width: 4rem;
+}

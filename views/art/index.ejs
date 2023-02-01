@@ -3,12 +3,8 @@
     <% if(currentUser && currentUser.admin==='on' ){ %>
         <a href="/art/new">New art</a>
         <% } %>
-            <div class="index-background">
-                <nav class="global-nav">
-                    <a href="/" class="button button-nav">Home</a>
-                    <a href="/art" class="button button-nav">Gallery</a>
-                    <a href="/about" class="button button-nav">about</a>
-                </nav>
+            <div class="header index-background">
+                <%- include('../partials/globalNav') %>
                 <div class="row">
                     <div class="col col-5 art-index">
                         <% for(let a of art) {%>

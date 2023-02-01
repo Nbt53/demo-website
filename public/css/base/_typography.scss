@@ -1,5 +1,13 @@
 .body {
+    font-family: 'Playfair Display', serif;
     text-decoration: none;
+}
+
+.button{
+    font-size: $font-size-small;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: $color-text-light;
 }
 
 .home-title {
@@ -12,7 +20,7 @@
     text-shadow: 1px 1px 8px $color-shadow;
 
     &-main {
-        font-family: 'Playfair Display', serif;
+    
         font-size: 60px;
         font-weight: 800;
         letter-spacing: 15px;
@@ -33,6 +41,27 @@
     text-align: center;
 }
 
-.main-love {
+.home-love {
     letter-spacing: normal;
+}
+
+.secondary-title{
+    font-size: $font-size-large;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.tertiary-title{
+    font-size: $font-size-medium;
+}
+
+.paragraph{
+    font-size: $font-size-small;
+}
+
+.home-footer{
+    color: $color-text-light;
+    font-size: $font-size-smaller;
 }

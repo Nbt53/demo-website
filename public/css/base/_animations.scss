@@ -57,3 +57,23 @@
     }
 }
 
+@keyframes logo-hover {
+    0% {
+        scale: 100%;
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-30deg);
+    }
+
+    80% {
+        scale: 110%;
+        transform: rotate(20deg);
+        filter: drop-shadow(0 5px 10px $color-shadow);
+    }
+
+    100% {
+        scale: 100%;
+        transform: rotate(0deg);
+    }
+}

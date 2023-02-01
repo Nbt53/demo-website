@@ -1,14 +1,110 @@
 <% layout('layouts/home') %>
-    <div class="home-background">
-        <nav class="home-nav">
-            <img src="/images/lovebirdlogo-white.png" alt="logo" class="home-background-logo">
-            <a href="/" class="button">Home</a>
-            <a href="/art" class="button">Gallery</a>
-            <a href="/about" class="button">about</a>
-        </nav>
-        <h1 class="home-title">
-            <span class="home-title-main"><span class="main-love">&lt;3</span> Bird</span>
-            <span class="home-title-sub">For the love of art</span>
-        </h1>
+    <section class="header home-header">
+        <%- include('../partials/globalNav') %>
+            <h1 class="home-title">
+                <span class="home-title-main"><span class="home-love">&lt;3</span> Bird</span>
+                <span class="home-title-sub">For the love of art</span>
+            </h1>
+    </section>
+    <main>
+        <section class="section-about">
+            <div class="u-margin-bottom-medium">
+                <h2 class="secondary-title">Images for the love of art</h2>
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="composition">
+                        <img src="images/totoro.png" alt="" class="composition-image composition-image-1">
+                        <img src="images/wave.png" alt="" class="composition-image composition-image-2">
+                        <img src="images/oneart.jpg" alt="" class="composition-image composition-image-3">
+                    </div>
+                </div>
+                <div class="col-1-of-2">
+                    <h2 class="tertiary-title">Passion projects</h2>
 
-    </div>
+                    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque tempore
+                        repellendus architecto accusantium! Inventore perspiciatis maxime at nostrum, odit laborum
+                        quidem eius obcaecati deleniti deserunt tempore mollitia, nesciunt quod maiores!</p>
+
+                    <h2 class="tertiary-title">Custom made images</h2>
+                    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque tempore
+                        repellendus architecto accusantium! Inventore perspiciatis maxime at nostrum, odit laborum
+                        quidem eius obcaecati deleniti deserunt tempore mollitia, nesciunt quod maiores!</p>
+
+                </div>
+            </div>
+
+
+            <section class="header service">
+                <div class="row">
+                    <div class="col-1-of-3">
+                        <div class="service-card">
+                            <img src="images/lovebirdlogo.png" alt="" class="card-logo">
+                            <div class="u-margin-bottom-small">
+                                <div class="tertiary-title">My art</div>
+                            </div>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse,
+                                repellendus pariatur voluptates omnis culpa reiciendis harum, quo enim aut aliquid
+                                numquam maiores minima et consectetur temporibus dolorum laudantium placeat non!</p>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3">
+                        <div class="service-card">
+                            <img src="images/lovebirdlogo.png" alt="" class="card-logo">
+                            <div class="u-margin-bottom-small">
+                                <div class="tertiary-title">Commissions</div>
+                            </div>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse,
+                                repellendus pariatur voluptates omnis culpa reiciendis harum, quo enim aut aliquid
+                                numquam maiores minima et consectetur temporibus dolorum laudantium placeat non!</p>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3">
+
+                        <div class="service-card">
+                            <img src="images/lovebirdlogo.png" alt="" class="card-logo">
+                            <div class="u-margin-bottom-small">
+                                <div class="tertiary-title">Digital portraits</div>
+                            </div>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse,
+                                repellendus pariatur voluptates omnis culpa reiciendis harum, quo enim aut aliquid
+                                numquam maiores minima et consectetur temporibus dolorum laudantium placeat non!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="home-footer">
+
+        <img src="images/lovebirdlogo-white.png" alt="" class="footer-logo">
+
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="tertiary-title">Contact us</div>
+                <ul class="contacts">
+                    <li>📧 E-Mail</li>
+                    <li>📸 Instagram</li>
+                    <li>📞 Call Me</li>
+                </ul>
+            </div>
+            <div class="col-1-of-2">
+                <div class="tertiary-title">Site credits</div>
+                <p >
+                    Site Design by me, inspired by Jonas Schmedtmann's course 'The most advanced and modern CSS course
+                    on the internet: master flexbox, CSS Grid, responsive design, and so much more.'
+                    You can find info on him and his courses <a href="https://codingheroes.io/">here</a>                    
+                </p>
+                <p >Built using node, express and mongoose using techniques learned from Colt Steele's 'The Web Developer Bootcamp 2023'
+                    his courses can be found <a href="https://www.udemy.com/user/coltsteele/">here</a> </p>
+
+                    <p>
+                        Image credits
+                        <ul class="contacts">
+                            <li>Background image by <a href="https://pixabay.com/users/ractapopulous-24766/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3616101">JL G</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3616101">Pixabay</a> </li>
+                        </ul>
+                    </p>
+            </div>
+        </div>
+
+    </footer>

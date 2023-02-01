@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 5px;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -105,8 +109,68 @@ html {
     scale: 100%;
   }
 }
+@-webkit-keyframes logo-hover {
+  0% {
+    scale: 100%;
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    scale: 110%;
+    transform: rotate(20deg);
+    filter: drop-shadow(0 5px 10px #05060F);
+  }
+  100% {
+    scale: 100%;
+    transform: rotate(0deg);
+  }
+}
+@keyframes logo-hover {
+  0% {
+    scale: 100%;
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    scale: 110%;
+    transform: rotate(20deg);
+    filter: drop-shadow(0 5px 10px #05060F);
+  }
+  100% {
+    scale: 100%;
+    transform: rotate(0deg);
+  }
+}
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
 .body {
+  font-family: "Playfair Display", serif;
   text-decoration: none;
+}
+
+.button {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #087E8B;
 }
 
 .home-title {
@@ -119,7 +183,6 @@ html {
   text-shadow: 1px 1px 8px #05060F;
 }
 .home-title-main {
-  font-family: "Playfair Display", serif;
   font-size: 60px;
   font-weight: 800;
   letter-spacing: 15px;
@@ -139,15 +202,36 @@ html {
   text-align: center;
 }
 
-.main-love {
+.home-love {
   letter-spacing: normal;
+}
+
+.secondary-title {
+  font-size: 3.5rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.tertiary-title {
+  font-size: 2.5rem;
+}
+
+.paragraph {
+  font-size: 1.7rem;
+}
+
+.home-footer {
+  color: #087E8B;
+  font-size: 1.5rem;
 }
 
 .button:link, .button:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1rem 1.5rem;
   margin: 30px;
   border-radius: 100px;
   transition: all 0.2s;
@@ -155,8 +239,8 @@ html {
   transition: all 0.2s;
   -webkit-animation: moveInTop 1s;
           animation: moveInTop 1s;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #7c7a7a;
+  background-color: rgba(221, 231, 238, 0.8);
+  box-shadow: 0 5px 5px rgba(5, 6, 15, 0.2);
 }
 .button:hover {
   transform: translateY(-3px);
@@ -171,31 +255,161 @@ html {
   text-align: center;
 }
 
-.home-background {
-  background-image: linear-gradient(to right, rgba(233, 53, 53, 0.4), rgba(108, 4, 4, 0.4)), url(../images/background-home.jpg);
-  margin: 25px;
-  padding: 0;
-  height: 95vh;
-  background-size: cover;
-  background-position: bottom;
-  -webkit-clip-path: polygon(0 0, 383% 0, 0 99%, 0 0);
-          clip-path: polygon(0 0, 383% 0, 0 99%, 0 0);
-  position: relative;
-}
-.home-background-logo {
+.header-logo {
   height: 50px;
   float: left;
   margin-top: 25px;
 }
+.header-logo:hover {
+  -webkit-animation: logo-hover 0.2s;
+          animation: logo-hover 0.2s;
+}
 
-.index-background {
-  background-image: linear-gradient(to right, rgba(233, 53, 53, 0.4), rgba(108, 4, 4, 0.4)), url(../images/background-home.jpg);
-  margin: 25px;
+.header {
+  background-image: linear-gradient(to right, rgba(200, 29, 37, 0.4), rgba(200, 29, 37, 0.4)), url(../images/background-home.jpg);
   padding: 0;
-  height: 95vh;
+  min-height: 95vh;
   background-size: cover;
   background-position: bottom;
   position: relative;
+}
+
+.composition {
+  position: relative;
+  z-index: 10;
+}
+.composition-image {
+  box-shadow: 0 5px 10px rgba(5, 6, 15, 0.2);
+  border-radius: 2px;
+  outline-offset: 0.5rem;
+  transition: all 0.4s;
+}
+.composition-image:hover {
+  transform: scale(110%) translateY(-1.1rem);
+  box-shadow: 0 10px 20 rgba(5, 6, 15, 0.2);
+  z-index: 20;
+  outline: 2px #087E8B solid;
+}
+.composition-image-1 {
+  max-width: 40rem;
+  position: absolute;
+  top: 7.5rem;
+}
+.composition-image-2 {
+  max-width: 20rem;
+  position: absolute;
+  top: 2rem;
+  left: -2rem;
+}
+.composition-image-3 {
+  max-width: 20rem;
+  position: absolute;
+  top: 18rem;
+  left: 23rem;
+}
+.composition:hover .composition-image:not(:hover) {
+  transform: scale(0.95);
+}
+
+.service {
+  background-size: cover;
+  transform: skewY(-7deg);
+  padding: 3rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.service-card {
+  margin-top: 8rem;
+  background-color: rgba(221, 231, 238, 0.6);
+  text-align: center;
+  padding: 2rem;
+  transition: all 0.2s;
+}
+.service-card:hover {
+  transform: scale(115%);
+  background-color: rgba(82, 164, 223, 0.6);
+  box-shadow: 20px 20px 20px rgba(82, 164, 223, 0.4);
+}
+
+.service > * {
+  transform: skewY(7deg);
+}
+
+.card-logo {
+  margin: 2rem 50%;
+  transform: translate(-50%, 0);
+  width: 4rem;
+}
+
+.home-footer {
+  background-color: #edeedd;
+  margin-top: -20rem;
+  padding-top: 10rem;
+  position: relative;
+}
+
+.footer-logo {
+  width: 15rem;
+  position: absolute;
+  top: 50%;
+  left: 80%;
+}
+
+.contacts {
+  list-style: none;
+}
+
+.row {
+  max-width: 93rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 6rem;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 3rem;
+}
+.row .col-1-of-2 {
+  width: calc((100% - 3rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2* 3rem) / 3);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3* 3rem) / 4);
+}
+.row .col-2-of-3 {
+  width: calc((100% - 2* 3rem) / 3 * 2 + 3rem);
+}
+.row .col-2-of-4 {
+  width: calc((100% - 3* 3rem) / 4 * 2 + 3rem);
+}
+.row .col-3-of-4 {
+  width: calc((100% - 2* 3rem) / 4 * 3 + 3rem);
+}
+
+.home-header {
+  -webkit-clip-path: polygon(0 0, 383% 0, 0 99%, 0 0);
+          clip-path: polygon(0 0, 383% 0, 0 99%, 0 0);
+}
+
+.section-about {
+  /* top | right | bottom | left */
+  padding: 28rem 0 9.5rem 0;
+  margin-top: -20rem;
+  background-color: #dde7ee;
+}
+
+.index-background {
   overflow: scroll;
 }
 
@@ -217,7 +431,6 @@ html {
   box-shadow: 5px 10px 1px rgba(5, 6, 15, 0.2);
 }
 
-/* partials */
 .navbar {
   background-color: #D3D4D9;
 }

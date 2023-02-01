@@ -1,11 +1,4 @@
 .index-background {
-    background-image: linear-gradient(to right, rgba($color-red-light, $opacity-background), rgba($color-red-dark, $opacity-background)), url(../images/background-home.jpg);
-    margin: 25px;
-    padding: 0;
-    height: 95vh;
-    background-size: cover;
-    background-position: bottom;
-    position: relative;
     overflow: scroll;
 }
 
