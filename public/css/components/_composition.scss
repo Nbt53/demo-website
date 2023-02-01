@@ -3,14 +3,14 @@
     z-index: 10;
 
     &-image {
-        box-shadow: 0 5px 10px rgba($color-shadow, .2);
+        box-shadow:$shadow-default;
         border-radius: 2px;
         outline-offset: .5rem;
         transition: all .4s;
 
         &:hover {
             transform: scale(110%) translateY(-1.1rem);
-            box-shadow: 0 10px 20 rgba($color-shadow, .2);
+            box-shadow: $shadow-hover;
             z-index: 20;
             outline: 2px $color-text-light solid;
         }

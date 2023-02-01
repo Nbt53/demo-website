@@ -2,21 +2,22 @@
     overflow: scroll;
 }
 
-.art-index {
-    height: 100vh;
+.index-display {
+    width: 90%;
+    text-align: center;
+    transition: all .4s ease;
+    margin: 0 auto;
+    
+}
 
-    &-images {
-        display: inline-block;
-        height: 40%;
-        width: 40%;
-        box-shadow: 0 2px 4px rgb($color-shadow, 0.2);
-        margin: 25px;
-        border-radius: 10px;
-        animation: fromCenter .4s;
-
-        &:hover {
-            transform: scale(110%);
-            box-shadow: 5px 10px 1px rgb($color-shadow, 0.2);
-        }
-    }
+.index-title{
+    color: $color-white;
+    text-shadow: $shadow-default;
+    margin: 0 auto;
+    width: 60%;
+    border-bottom: 1px solid $color-text-light;
+    background-color: rgb($color-background-light, .6);
+    padding: 1rem 0;
+    box-shadow: $shadow-default;
+    border-radius: 5px;
 }

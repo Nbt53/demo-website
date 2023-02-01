@@ -3,4 +3,8 @@
     <a href="/" class="button">Home</a>
     <a href="/art" class="button">Gallery</a>
     <a href="/about" class="button">about</a>
+    <% if(currentUser && currentUser.admin==='on' ){ %>
+        <a href="/art/new" class="button">New art</a>
+        <a href="/admin" class="button">Admin</a>
+        <% } %>
 </nav>

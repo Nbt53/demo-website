@@ -1,0 +1,101 @@
+.images {
+    perspective: 1500px;
+    -moz-perspective: 1500px;
+    position: relative;
+    height: 40rem;
+    width: 40rem;
+    font-size: $font-size-small;
+    display: inline-block;
+    margin: 2rem;
+
+    &-side {
+        display: inline-block;
+        height: 40rem;
+        margin: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40rem;
+        transition: all .8s ease;
+        height: 32.5rem;
+        backface-visibility: hidden;
+
+        box-shadow: $shadow-default;
+        border-radius: 5px;
+
+        &-front {
+            border: 1px solid black;
+        }
+
+        &-back {
+            padding: 1rem;
+            background-image: linear-gradient(to right bottom, rgb($color-background-dark, .8), rgb($color-background-light, .8));
+            transform: rotateY(180deg);
+        }
+    }
+
+    &:hover &-side-front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &-side-back {
+        transform: rotateY(0);
+    }
+
+    //back side
+
+    &-cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate((-50%, -50%));
+        width: 90%;
+        padding: 3rem;
+    }
+
+    &-info-box {
+        text-align: center;
+        margin: 0 3rem;
+        color: $color-white;
+    }
+
+    &-info-title {
+        font-size: $font-size-medium;
+
+    }
+
+    &-info-price {
+        font-size: 3.75rem;
+        font-weight: 100;
+    }
+
+    &-info-description {
+        max-height: 10rem;
+        overflow: hidden;
+    }
+
+    .btn-price {
+        padding: 0.16rem 4.25rem;
+        margin: 0 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+// .art-index {
+
+//     &-images {
+//         display: inline-block;
+//         height: 40%;
+//         width: 40%;
+//         box-shadow: 0 2px 4px rgb($color-shadow, 0.2);
+//         margin: 25px;
+//         border-radius: 10px;
+//         animation: fromCenter .4s;
+
+//         &:hover {
+//             transform: scale(110%);
+//             box-shadow: 5px 10px 1px rgb($color-shadow, 0.2);
+//         }
+//     }
+// }

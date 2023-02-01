@@ -1,32 +1,38 @@
 <% layout('layouts/home') %>
+    <div class="header index-background">
+        <%- include('../partials/globalNav') %>
 
-    <% if(currentUser && currentUser.admin==='on' ){ %>
-        <a href="/art/new">New art</a>
-        <% } %>
-            <div class="header index-background">
-                <%- include('../partials/globalNav') %>
-                <div class="row">
-                    <div class="col col-5 art-index">
-                        <% for(let a of art) {%>
+            <div class="index-display">
+                <div class="secondary-title index-title">&lt;3 Gallery</div>
+                <% for(let a of art) {%>
+                    <% if(a.image.length){ %>
+                        <div class="images">
 
-                            <a href="/art/<%= a._id %>">
-                                <% if(a.image.length){ %>
+                            <img src="<%= a.image[0].url%>" alt="" class="images-side images-side-front">
 
-                                    <img src="<%= a.image[0].url%>" alt="" class="img-fluid art-index-images">
-                            </a>
                             <% }else{ %>
                                 <img src="https://res.cloudinary.com/djj2nhj8d/image/upload/v1670015214/YelpCamp/zshtmbowhix1ihrmytfu.png"
-                                    alt="" class="img-fluid">
+                                    alt="" class="index-display-images">
                                 <% } %>
-                                    </a>
 
+                                    <div class="images-side images-side-back">
 
+                                        <div class="images-info-box">
+                                            <p class="images-info-title">
+                                                <%= a.title %>
+                                            </p>
+                                            <p class="images-info-price">
+                                                £<%= a.price %>
+                                            </p>
+                                            <p class="images-info-description">
+                                                <%= a.description %>
+                                            </p>
+                                            <a href="/art/<%= a._id %>" class="button button-white">View</a>
 
-                                    <%} %>
-                    </div>
-                    <div class="col col-5">
-
-                    </div>
-                </div>
-
+                                        </div>
+                                    </div>
+                        </div>
+                        <%} %>
             </div>
+
+            <%- include('../partials/footer') %>
