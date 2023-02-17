@@ -2,8 +2,8 @@
 .footer-logo{
     width: 15rem;
     position: absolute;
-    top: 50%;
-    left: 80%;
+    top: 73%;
+    left: -1%;
 }
 
 .contacts{
@@ -13,6 +13,11 @@
 .global-footer{
     background-color: $color-background-light;
     padding: 1rem;
+    margin: 1rem 0;
     font-size: $font-size-smaller;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: -1;
 
 }

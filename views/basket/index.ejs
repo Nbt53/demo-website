@@ -1,13 +1,16 @@
-<% layout('layouts/boilerplate') %>
+<% layout('layouts/global') %>
+    <div class="header">
+        <%- include('../partials/globalNav') %>
+            Basket: <br>
+            <div class="basket-container">
+                <% for(a of basket){ %>
+                    <div class="row">
 
-    Basket: <br>
-    <div class="basket-container">
-        <% for(a of basket){ %>
-            <div class="row">
-                
-                <p>
-                    £<%=a.price %>
-                </p>
+                        <p>
+                            £<%=a.price %>
+                        </p>
+                    </div>
+                    <% } %>
             </div>
-            <% } %>
+
     </div>

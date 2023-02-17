@@ -15,9 +15,6 @@ module.exports.signupPost = async (req, res, next) => {
     try {
         const { username, email, password, admin } = req.body;
         const newUser = new User({ username, email, admin });
-        if (!admin) {
-            admin = 'off'
-        }
         const registeredUser = await User.register(newUser, password);
         req.login(registeredUser, err => {
             if (err) return next(err);

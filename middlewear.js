@@ -18,4 +18,12 @@ const isAdmin = (req, res, next) => {
     next()
 
 }
+
 module.exports.isAdmin = isAdmin;
+
+const marker = (req, res, next) =>{
+    console.log('here')
+    next()
+}
+
+module.exports.marker = marker;

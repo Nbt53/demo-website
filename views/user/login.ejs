@@ -1,14 +1,25 @@
-<% layout('layouts/boilerplate') %>
+<div class="popup" id="login">
+    <div class="popup-content">
+        <a href="#" class="popup-content-close">&cross;</a>
 
-<form action="/login" method="POST" >
-    <div class="sign-form row">
+        <div class="secondary-title u-margin-bottom-medium">Login</div>
 
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <form action="/login" method="POST" class="user-form">
+            <div class=" row">
 
-        <button class="btn btn-success btn-block">Login</button>
+                <div class="user-input u-margin-bottom-medium">
+            
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                 
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+              
+                </div>
+                <button class="button button-dark user-submit" submit>Login</button>
+
+            </div>
+        </form>
 
     </div>
-</form>
+</div>

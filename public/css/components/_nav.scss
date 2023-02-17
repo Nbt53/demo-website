@@ -1,13 +1,43 @@
 .global-nav {
     text-align: center;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.46), transparent);
+
+    .nav-link {
+        font-size: $font-size-smaller;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 700;
+        color: $color-text-dark-2;
+        box-shadow: none;
+        text-shadow: $shadow-default;
+        animation: none;
+        margin: 2rem;
+        background-color: transparent;
+        text-shadow: $shadow-default;
+
+        &:hover {
+            text-shadow: 1px 1px 8px rgb(228, 230, 242);
+        }
+    }
 }
 
 .header-logo {
     height: 50px;
     float: left;
     margin-top: 25px;
+    filter: drop-shadow(0 5px 2px $color-shadow);
 
     &:hover {
         animation: logo-hover .2s;
     }
+}
+
+
+
+.user-buttons {
+    float: right;
+    width: fit-content;
+
+    .nav-link {}
 }

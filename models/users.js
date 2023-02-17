@@ -10,7 +10,10 @@ const UserSchema = new Schema({
         unique: true
     },
     basket: [],
-    admin: String
+    admin: {
+       type: String,
+       required: false
+    }
 });
 
 UserSchema.plugin(passportLocalMongoose);

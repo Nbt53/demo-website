@@ -4,8 +4,14 @@ $color-shadow: #05060F;
 
 $color-red-light: #FF5A5F;
 $color-red-dark: #C81D25;
+$color-green-light: #79dc79;
+$color-green-dark:#447a44;
+
 $color-text-light: #087E8B;
+$color-text-light-2: #88B9BE;
 $color-text-dark: #0B3954;
+$color-text-dark-2: #193c58;
+$color-text-dark-3: #581919;
 
 $color-background-light: #dde7ee;
 $color-background-yellow: #edeedd;
@@ -27,3 +33,4 @@ $gutter-horizontal: 3rem;
 //other
 $shadow-default:  0 10px 10px rgba($color-shadow, .2);
 $shadow-hover: 0 20px 20px rgba($color-shadow, .2);
+$shadow-hover-glow: 5px 5px 5px rgba($color-red-dark, .2);

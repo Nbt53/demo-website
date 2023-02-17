@@ -1,38 +1,70 @@
-<% layout('layouts/home') %>
+<% layout('layouts/global') %>
     <div class="header index-background">
         <%- include('../partials/globalNav') %>
 
             <div class="index-display">
                 <div class="secondary-title index-title">&lt;3 Gallery</div>
-                <% for(let a of art) {%>
-                    <% if(a.image.length){ %>
-                        <div class="images">
 
-                            <img src="<%= a.image[0].url%>" alt="" class="images-side images-side-front">
+                <div class="display-container">
+                    <div class="scroll-buttons">
+                        <span class="scroll-buttons-left" onclick=mouseClickLeft()>&#x3c;</span> scroll
+                        <span class="scroll-buttons-right" onclick=mouseClickRight()>&#x3e;</span>
+                    </div>
 
-                            <% }else{ %>
-                                <img src="https://res.cloudinary.com/djj2nhj8d/image/upload/v1670015214/YelpCamp/zshtmbowhix1ihrmytfu.png"
-                                    alt="" class="index-display-images">
-                                <% } %>
+                    <div class="display-wrapper">
+                        <% let pic=0 %>
+                            <% for(let a of art) {%>
+                                <% if(a.image.length){ %>
+                                    <div class="display-slide" name="<%=pic  %>">
+                                        <div class="images">
+                                            <img src="<%= a.image[0].url%>" alt=""
+                                                class="images-side images-side-front images-side-display">
 
-                                    <div class="images-side images-side-back">
+                                            <% }else{ %>
+                                                <img src="https://res.cloudinary.com/djj2nhj8d/image/upload/v1670015214/YelpCamp/zshtmbowhix1ihrmytfu.png"
+                                                    alt="" class="index-display-images">
+                                                <% } %>
 
-                                        <div class="images-info-box">
-                                            <p class="images-info-title">
-                                                <%= a.title %>
-                                            </p>
-                                            <p class="images-info-price">
-                                                £<%= a.price %>
-                                            </p>
-                                            <p class="images-info-description">
-                                                <%= a.description %>
-                                            </p>
-                                            <a href="/art/<%= a._id %>" class="button button-white">View</a>
+                                                    <div class="images-side images-side-back images-side-display">
 
+                                                        <div class="images-info-box">
+                                                            <p class="images-info-title">
+                                                                <%= a.title %>
+                                                            </p>
+                                                            <p class="images-info-price">
+                                                                £<%= a.price %>
+                                                            </p>
+                                                            <p class="images-info-description">
+                                                                <%= a.description %>
+                                                            </p>
+                                                            <a href="/art/<%= a._id %>"
+                                                                class="button button-white">View</a>
+
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
-                        </div>
-                        <%} %>
+                                    <% pic +=1 %>
+                                        <%} %>
+                    </div>
+                </div>
             </div>
+    </div>
 
-            <%- include('../partials/footer') %>
+    <script>
+        const left = document.getElementsByClassName('scroll-buttons-left')
+        const right = document.getElementsByClassName('scroll-buttons-right')
+
+        let pos = 0
+
+        const mouseClickLeft = (e) => {
+            const displayBox = document.querySelector('.display-wrapper')
+            displayBox.scrollLeft -= 200
+        }
+
+        const mouseClickRight = (e) => {
+            pos -= 1
+            const displayBox = document.querySelector('.display-wrapper')
+            displayBox.scrollLeft += 200
+        }
+    </script>

@@ -11,10 +11,11 @@ module.exports.newForm = (req, res) => {
     res.render('art/new')
 }
 
-module.exports.submitNew = (req, res) => {
+module.exports.submitNew = async(req, res) => {
     const newArt = new Art(req.body.art)
-    newArt.image = req.files.map(f => ({ url: f.path, filename: f.filename }))
-    newArt.save()
+    newArt.image = await req.files.map(f => ({ url: f.path, filename: f.filename }))
+    console.log(newArt)
+    await newArt.save()
     req.flash('success', 'one art added')
     res.redirect('/art')
 }

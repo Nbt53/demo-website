@@ -3,7 +3,7 @@
     z-index: 10;
 
     &-image {
-        box-shadow:$shadow-default;
+        box-shadow: $shadow-default;
         border-radius: 2px;
         outline-offset: .5rem;
         transition: all .4s;
@@ -39,4 +39,121 @@
     &:hover &-image:not(:hover) {
         transform: scale(.95);
     }
+}
+
+@media (max-width: 1000px) {
+    .composition {
+
+        &-image {
+            &-1 {
+                max-width: 20rem;
+                position: absolute;
+                top: 6.5rem;
+                left: 9rem;
+            }
+
+            &-2 {
+                max-width: 15rem;
+                position: absolute;
+                top: 12rem;
+                left: 23rem;
+            }
+
+            &-3 {
+                max-width: 15rem;
+                position: absolute;
+                top: 2rem;
+                left: 2rem;
+            }
+
+        }
+
+        &-paragraph {
+            font-size: .8rem;
+            columns: 2;
+            column-rule: 1px solid black;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+
+    .section-about {
+        .col-1-of-2 {
+            display: block;
+            width: 100%;
+        }
+
+        .composition{
+            position: unset;
+            width: fit-content;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+
+            &-image{
+                position: unset;
+                width: 30%;
+                margin: 0 1%;
+            }
+            &-text{
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+
+        
+    }
+
+    // .composition {
+
+    //     &-paragraph {
+    //         font-size: $font-size-smaller;
+    //         columns: 1;
+
+    //     }
+
+    //     &-image {
+    //         display: block;
+    //         position: unset;
+    //         max-width: 100%;
+    //         margin: 5rem 2rem;
+
+    //         &-1 {
+    //             margin-top: 0;
+    //         }
+    //     }
+    // }
+    // .section-about{
+    //     .tertiary-title{
+    //         margin-bottom: 2rem;
+    //     }
+    // }
+}
+
+@media (max-width: 385px) {
+    // .composition {
+
+    //     &-paragraph {
+    //         font-size: 1rem;
+    //         columns: 1;
+
+    //     }
+
+    //     &-image {
+    //         display: block;
+    //         position: unset;
+    //         max-width: 100%;
+    //         margin: 5rem 2rem;
+
+    //         &-1 {
+    //             margin-top: 0;
+    //         }
+    //     }
+    // }
+    // .section-about{
+    //     .tertiary-title{
+    //         margin-bottom: 2rem;
+    //     }
+    // }
 }

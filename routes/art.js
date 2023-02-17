@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const art = require('../controllers/art');
-const { isLoggedIn, isAdmin } = require('../middlewear');
+const { isLoggedIn, isAdmin, marker } = require('../middlewear');
 const multer = require('multer')
 const { storage } = require('../cloudinary');
 const catchAsync = require('../utils/catchAsync');
@@ -12,7 +12,7 @@ router.route('/')
 
 router.route('/new')
     .get(isLoggedIn, isAdmin, art.newForm)
-    .post(isLoggedIn, isAdmin, upload.array('image'), art.submitNew)
+    .post(isLoggedIn, isAdmin, upload.array('image'), catchAsync(art.submitNew))
 
 router.route('/:id')
     .get(catchAsync(art.show))

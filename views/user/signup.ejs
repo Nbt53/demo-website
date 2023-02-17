@@ -1,6 +1,31 @@
-<% layout('layouts/boilerplate') %>
+<div class="popup" id="signup">
+    <div class="popup-content">
+        <a href="#" class="popup-content-close">&cross;</a>
 
-    <form action="/signup" method="POST" >
+        <div class="secondary-title u-margin-bottom-medium">Signup</div>
+
+        <form action="/signup" method="POST" class="user-form">
+            <div class=" row">
+
+                <div class="user-input u-margin-bottom-medium">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <label for="admin">Admin</label>
+                    <input type="checkbox" name="admin" id="admin">
+                </div>
+                <button class="button button-dark user-submit" submit>Signup</button>
+
+            </div>
+        </form>
+
+    </div>
+</div>
+
+    <!-- <form action="/signup" method="POST" >
         <div class="sign-form row">
 
             <label for="username">Username</label>
@@ -15,4 +40,4 @@
             <button class="btn btn-success btn-block">Signup</button>
 
         </div>
-    </form>
+    </form> -->

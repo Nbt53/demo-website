@@ -3,11 +3,11 @@
     text-decoration: none;
 }
 
-.button{
+.button {
     font-size: $font-size-small;
-        font-weight: 600;
-        letter-spacing: 3px;
-        color: $color-text-light;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: $color-text-light;
 }
 
 .primary-title {
@@ -19,12 +19,12 @@
     transform: translate(-50%, -50%);
     text-shadow: 1px 1px 8px $color-shadow;
 
-    &:hover{
+    &:hover {
         animation: fire 1s;
     }
 
     &-main {
-    
+
         font-size: 60px;
         font-weight: 800;
         letter-spacing: 15px;
@@ -49,7 +49,7 @@
     letter-spacing: normal;
 }
 
-.secondary-title{
+.secondary-title {
     font-size: $font-size-large;
     text-align: center;
     font-weight: 700;
@@ -57,15 +57,55 @@
     text-transform: uppercase;
 }
 
-.tertiary-title{
+.tertiary-title {
     font-size: $font-size-medium;
 }
 
-.paragraph{
+.paragraph {
     font-size: $font-size-small;
 }
 
-.home-footer{
+.home-footer {
     color: $color-text-light;
     font-size: $font-size-smaller;
+}
+
+
+@media (max-width: 1000px) {
+    .card-title {
+        font-size: $font-size-medium;
+    }
+}
+
+@media (max-width: 760px) {
+    .secondary-title {
+        font-size: $font-size-medium;
+    }
+
+    .primary-title-main {
+        font-size: $font-size-small;
+        margin-top: 10rem;
+    }
+
+    .card-title {
+        // font-size: $font-size-small;
+    }
+}
+
+@media (max-width: 460px) {
+    .tertiary-title {
+        font-size: $font-size-smaller;
+    }
+
+    .secondary-title {
+        font-size: $font-size-small;
+    }
+
+    .home-footer {
+        color: $color-text-light;
+        font-size: 0.8rem;
+    }
+    .card-title {
+         font-size: $font-size-medium;
+    }
 }

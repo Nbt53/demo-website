@@ -1,6 +1,6 @@
 .images {
-    perspective: 1500px;
     -moz-perspective: 1500px;
+    perspective: 1500px;  
     position: relative;
     height: 40rem;
     width: 40rem;
@@ -29,8 +29,8 @@
 
         &-back {
             padding: 1rem;
-            background-image: linear-gradient(to right bottom, rgb($color-background-dark, .8), rgb($color-background-light, .8));
-            transform: rotateY(180deg);
+            background-image: linear-gradient(to right bottom, rgb($color-white, .8), rgb($color-background-light, .8));
+            transform: rotateY(-180deg);            
         }
     }
 
@@ -54,9 +54,9 @@
     }
 
     &-info-box {
+        color: $color-text-dark;
         text-align: center;
         margin: 0 3rem;
-        color: $color-white;
     }
 
     &-info-title {
@@ -82,20 +82,6 @@
 
 }
 
-// .art-index {
-
-//     &-images {
-//         display: inline-block;
-//         height: 40%;
-//         width: 40%;
-//         box-shadow: 0 2px 4px rgb($color-shadow, 0.2);
-//         margin: 25px;
-//         border-radius: 10px;
-//         animation: fromCenter .4s;
-
-//         &:hover {
-//             transform: scale(110%);
-//             box-shadow: 5px 10px 1px rgb($color-shadow, 0.2);
-//         }
-//     }
-// }
+@media (max-width: 400px){
+    
+}

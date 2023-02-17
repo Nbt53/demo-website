@@ -1,0 +1,48 @@
+*******************************index code********************
+
+<!-- 
+                <div class="index-carousel">
+                    <div class="index-carousel-content">
+                        <div class="slideshow">
+                            <!-- slideshow buttons -->
+                            <div class="slide-btn slide-btn-1">&lt;</div>
+                            <div class="slide-btn slide-btn-2">&gt;</div>
+                            <div class="slideshow-wrapper">
+                            <% for(let a of art) {%>
+                                <% if(a.image.length){ %>
+                                    <div class="index-carousel-slide">
+                                    <div class="images">
+
+                                        <img src="<%= a.image[0].url%>" alt="" class="images-side images-side-front">
+
+                                        <% }else{ %>
+                                            <img src="https://res.cloudinary.com/djj2nhj8d/image/upload/v1670015214/YelpCamp/zshtmbowhix1ihrmytfu.png"
+                                                alt="" class="index-display-images">
+                                            <% } %>
+
+                                                <div class="images-side images-side-back">
+
+                                                    <div class="images-info-box">
+                                                        <p class="images-info-title">
+                                                            <%= a.title %>
+                                                        </p>
+                                                        <p class="images-info-price">
+                                                            £<%= a.price %>
+                                                        </p>
+                                                        <p class="images-info-description">
+                                                            <%= a.description %>
+                                                        </p>
+                                                        <a href="/art/<%= a._id %>" class="button button-white">View</a>
+
+                                                    </div>
+                                                </div>
+                                    </div>
+                                </div>
+                                    <%} %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             -->

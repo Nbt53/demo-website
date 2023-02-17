@@ -1,4 +1,6 @@
-<% layout('layouts/boilerplate') %>
+<% layout('layouts/global') %>
+    <div class="header ">
+        <%- include('../partials/globalNav') %>
 
 <form action="/art/new" method="POST" enctype="multipart/form-data" >
     <div class="sign-form row">
@@ -16,3 +18,4 @@
 
     </div>
 </form>
+    </div>

@@ -7,8 +7,8 @@ const catchAsync = require('../utils/catchAsync');
 router.route('/')
     .get(catchAsync(info.home))
 
-router.route('/pricing')
-    .get(info.pricing)
+router.route('/services')
+    .get(info.services)
 
 router.route('/about')
     .get(info.about)

@@ -7,8 +7,8 @@ module.exports.home = async (req, res) => {
     res.render('info/home', { art })
 }
 
-module.exports.pricing = (req, res) => {
-    res.render('info/pricing')
+module.exports.services = (req, res) => {
+    res.render('info/services')
 }
 
 module.exports.about = (req, res) => {

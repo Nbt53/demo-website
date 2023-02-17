@@ -1,18 +1,29 @@
-<% layout('layouts/boilerplate') %>
-    <div class="row">
-        <div class="col-6 offset-3">
-            <div class="alert alert-danger" role="alert">
-                <h4 class="alert-heading">
-                    <%= err.message %>
-                </h4>
-                <p>
-                   <%    if (process.env.NODE_ENV !== "production") {%>
-                    <%= err.stack %>
-                    <% } %> 
-                </p>
-                <hr>
-                <p class="mb-0">Status code: <%= err.status %>
-                </p>
+<% layout('layouts/global') %>
+    <div class="header">
+        <%- include('./partials/globalNav') %>
+            <div class="row">
+                <div class="error-title">
+                    Oopsie doopsy, Somthing went wrong
+                    
+                </div>
+                <div class="col-6 offset-3">
+                    <!-- <a href="#error" class="button button-white button-error">Show error</a> -->
+                    <div class="error" name="error">
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">
+                                <%= err.message %>
+                            </h4>
+                            <p>
+                                <% if (process.env.NODE_ENV !=="production" ) {%>
+                                    <%= err.stack %>
+                                    <% console.log(err) %>
+                                        <% } %>
+                            </p>
+                            <hr>
+                            <p class="mb-0">Status code: <%= err.status %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
