@@ -13,10 +13,18 @@ const storage = new CloudinaryStorage({
         folder: 'lovebird',
         allowedFormats: ['jpeg', 'png', 'jpg']
     }
+})
 
+const storage2 = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: 'quotes',
+        allowedFormats: ['jpeg', 'png', 'jpg']
+    }
 })
 
 module.exports = {
     cloudinary,
-    storage
+    storage,
+    storage2
 }

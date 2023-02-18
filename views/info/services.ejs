@@ -2,8 +2,36 @@
 <div class="header ">
 <%- include('../partials/globalNav') %>
 
-<section class="section-services">
-    <div class="row">
+<section class="services">
+
+    <h2 class="secondary-title services-title">Services</h2>
+
+    <form action="/services" method="POST" class="services-form" enctype="multipart/form-data">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="services-inputs" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" class="services-inputs" required>
+
+        <label for="description" class="services-inputs" required>description:</label>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" name="image" id="image">
+        
+
+        <button class="button button-white">Submit</button>
+    </form>
+   
+</section>
+
+
+
+<!-- add pricing and descriptions
+ -->
+
+  <!-- <div class="row">
         <div class="col-1-of-3">
             <div class="component-card">
                 <div class="card-header card-header-1"> </div>
@@ -40,11 +68,5 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
   
-</section>
-
-
-
-<!-- add pricing and descriptions
- -->

@@ -1,6 +1,6 @@
 const Art = require('../models/art')
-const { cloudinary } = require('../cloudinary')
-const { findByIdAndUpdate } = require('../models/art')
+// const { cloudinary } = require('../cloudinary')
+// const { findByIdAndUpdate } = require('../models/art')
 
 module.exports.index = async (req, res) => {
     const art = await Art.find({})
@@ -14,7 +14,6 @@ module.exports.newForm = (req, res) => {
 module.exports.submitNew = async(req, res) => {
     const newArt = new Art(req.body.art)
     newArt.image = await req.files.map(f => ({ url: f.path, filename: f.filename }))
-    console.log(newArt)
     await newArt.save()
     req.flash('success', 'one art added')
     res.redirect('/art')

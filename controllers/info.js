@@ -1,5 +1,6 @@
 const Art = require("../models/art")
 const User = require("../models/users")
+const { transporter, sendMail } = require("../nodemailer/nodemailer")
 
 
 module.exports.home = async (req, res) => {
@@ -30,4 +31,13 @@ module.exports.updateUser = async (req, res) => {
     const updated = { username, email, admin, basket }
     await User.findByIdAndUpdate(_id, { ...updated })
     res.redirect('/admin')
+}
+
+module.exports.sendForQuote = async (req, res) =>{
+   // console.log(req.files)
+    const {name, email, description} = req.body;
+    let file = await req.files.map(f => ({ url: f.path, filename: f.filename }))   
+    console.log(file[0])
+    sendMail(name, email, description, file[0].url, file[0].name)  
+    res.redirect('/services')
 }
