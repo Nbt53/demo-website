@@ -8,6 +8,7 @@ module.exports.index = async (req, res) => {
 }
 
 module.exports.newForm = (req, res) => {
+    console.log('first')
     res.render('art/new')
 }
 

@@ -1,10 +1,11 @@
 .admin {
-
+text-align: center;
     &-user {
 
         display: inline-block;
         background-color: rgba($color-background-light, .8);
         width: 20rem;
+       
         margin-bottom: 2rem;
         padding: 2rem;
         margin-top: 10rem;

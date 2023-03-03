@@ -19,6 +19,10 @@ html {
     margin: 0;
   }
 }
+main {
+  z-index: -10;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -249,6 +253,42 @@ html {
   width: calc((100% - 2* 3rem) / 4 * 3 + 3rem);
 }
 
+.edit-title {
+  margin: 2rem 0;
+}
+
+.form-body {
+  background-color: rgba(221, 231, 238, 0.8);
+  padding: 1rem;
+  border-radius: 2px;
+  box-shadow: 0 10px 10px rgba(5, 6, 15, 0.2);
+  text-align: center;
+}
+.form-title {
+  letter-spacing: 1rem;
+  margin: 3rem 0;
+}
+.form-col {
+  padding-top: 1rem;
+  width: 50%;
+  display: inline-block;
+}
+.form-input {
+  width: 40%;
+  margin: 0 auto;
+}
+.form label {
+  display: block;
+}
+.form hr {
+  border: unset;
+}
+.form button {
+  width: 30%;
+  display: inline-block;
+  margin: 1rem auto;
+}
+
 .button:link, .button:visited {
   display: inline-block;
   text-transform: uppercase;
@@ -282,43 +322,27 @@ html {
   background-color: #fff;
 }
 
-.global-nav {
-  text-align: center;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.46), transparent);
-}
-.global-nav .nav-link {
+.navbar {
   font-size: 1.5rem;
   text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 700;
-  color: #193c58;
-  box-shadow: none;
-  text-shadow: 0 10px 10px rgba(5, 6, 15, 0.2);
-  animation: none;
-  margin: 2rem;
-  background-color: transparent;
-  text-shadow: 0 10px 10px rgba(5, 6, 15, 0.2);
+  background-color: white;
+  letter-spacing: 1px;
 }
-.global-nav .nav-link:hover {
-  text-shadow: 1px 1px 8px rgb(228, 230, 242);
+.navbar-brand {
+  background-color: black;
+  background-clip: content-box;
 }
-
-.header-logo {
-  height: 50px;
-  float: left;
-  margin-top: 25px;
-  filter: drop-shadow(0 5px 2px #05060F);
+.navbar-logo {
+  width: 2rem;
 }
-.header-logo:hover {
-  animation: logo-hover 0.2s;
+.navbar-user {
+  margin-right: 0 !important;
+}
+.navbar .nav-item:hover {
+  -webkit-text-decoration: underline 1px black;
+          text-decoration: underline 1px black;
 }
 
-.user-buttons {
-  float: right;
-  width: -moz-fit-content;
-  width: fit-content;
-}
 .header {
   background-image: linear-gradient(to right, rgba(200, 29, 37, 0.4), rgba(200, 29, 37, 0.4)), url(../images/background-home.jpg);
   padding: 0;
@@ -435,7 +459,7 @@ html {
 
 .card-header {
   height: 33.33333%;
-  width: 100%;
+  width: 101%;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 99%);
@@ -537,7 +561,11 @@ html {
   position: fixed;
   bottom: 0;
   width: 100vw;
+}
+
+.home-footer {
   z-index: -1;
+  font-size: -40%;
 }
 
 .images {
@@ -563,9 +591,6 @@ html {
           backface-visibility: hidden;
   box-shadow: 0 10px 10px rgba(5, 6, 15, 0.2);
   border-radius: 5px;
-}
-.images-side-front {
-  border: 1px solid black;
 }
 .images-side-back {
   padding: 1rem;
@@ -627,7 +652,11 @@ html {
   position: fixed;
   bottom: 0;
   width: 100vw;
+}
+
+.home-footer {
   z-index: -1;
+  font-size: -40%;
 }
 
 .display-container {
@@ -646,10 +675,6 @@ html {
   position: relative;
   overflow: hidden;
 }
-.display-slide {
-  padding: 0 auto;
-}
-
 .images-side-display {
   width: 30rem;
   height: 30rem;
@@ -662,10 +687,39 @@ html {
   font-weight: 800;
   text-shadow: 1rem 1rem 1rem;
   cursor: pointer;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
-  user-select: none .scroll-buttons -left;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+@media (max-width: 850px) {
+  .index-display-images {
+    width: 65rem;
+    height: 65rem;
+    margin: 0 10rem;
+  }
+  .images-side {
+    width: 50rem;
+    height: 50rem;
+  }
+}
+@media (max-width: 500px) {
+  .index-display-images {
+    height: 40rem;
+    width: 40rem;
+    margin: 0px 4rem;
+    margin-top: 2rem;
+  }
+  .images-side {
+    width: 30rem;
+    height: 30rem;
+  }
 }
 .popup {
   height: 100vh;
@@ -711,6 +765,7 @@ html {
 }
 .user-input label {
   display: table-cell;
+  white-space: nowrap;
 }
 .user-input input {
   display: table-cell;
@@ -726,6 +781,8 @@ html {
 
 .global-flash {
   display: inline-block;
+  z-index: 100;
+  width: 100%;
 }
 
 .home-header {
@@ -826,18 +883,43 @@ html {
   letter-spacing: 10px;
 }
 
+.services-body {
+  background-color: rgba(221, 231, 238, 0.8);
+  padding: 1rem;
+  border-radius: 2px;
+  box-shadow: 0 10px 10px rgba(5, 6, 15, 0.2);
+}
 .services-title {
   letter-spacing: 1rem;
+  margin: 3rem 0;
+}
+.services-col {
+  padding-top: 1rem;
+  width: 50%;
+  display: inline-block;
+}
+.services-description {
+  text-align: center;
+  margin-right: 0;
+}
+.services-text {
+  font-size: 1.7rem;
+  -moz-columns: 2;
+       columns: 2;
+  -moz-column-rule: 1px solid #88B9BE;
+       column-rule: 1px solid #88B9BE;
+  justify-self: center;
 }
 .services-form {
   text-align: center;
+  border-left: 1px solid black;
 }
 .services label {
   display: block;
 }
 .services button {
   display: block;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .show-image {
@@ -864,6 +946,9 @@ html {
   float: left;
 }
 
+.admin {
+  text-align: center;
+}
 .admin-user {
   display: inline-block;
   background-color: rgba(221, 231, 238, 0.8);
@@ -876,4 +961,41 @@ html {
 .error-title {
   font-size: 3.5rem;
   font-weight: 500;
+}
+
+.new-title {
+  margin: 3rem;
+}
+
+.new {
+  text-align: center;
+}
+.new form {
+  display: inline-block;
+  background-color: #dde7ee;
+  width: 40%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2rem 0;
+}
+.new-input {
+  font-size: 1.7rem;
+}
+.new-input label {
+  text-transform: capitalize;
+}
+.new-input input {
+  margin: 0 auto;
+  max-width: 50%;
+}
+.new-input textarea {
+  margin: 0 auto;
+  max-width: 50%;
+}
+.new-input .button-dark {
+  margin: 1rem auto;
+  border-radius: 5px;
+  width: 50%;
+  text-decoration: none;
+  border: none;
 }/*# sourceMappingURL=app.css.map */

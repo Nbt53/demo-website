@@ -1,23 +1,23 @@
 <% layout('layouts/global') %>
-    <div class="header ">
-        <%- include('../partials/globalNav') %>
 
-<h1>Edit Details for <%= art.title %> </h1>
+<h1 class="secondary-title edit-title">Edit Details for <%= art.title %> </h1>
+<div class="edit-img"><img src="" alt=""></div>
 
-<form action="/art/<%=art._id %>/edit?_method=PUT" method="POST"  >
-    <div class="sign-form row">
+<form action="/art/<%=art._id %>/edit?_method=PUT" method="POST"  class="form">
+    <div class="form-body row">
+        <label for="title" >Title</label>
+        <input type="text" name="art[title]" id="title" value="<%= art.title %> "  class="form-input">
+        <label for="price">Price</label>
+        <input type="number" name="art[price]" id="price" value="<%= art.price %>" class="form-input">
 
-        <label for="title" >title</label>
-        <input type="text" name="art[title]" id="title" value="<%= art.title %>">
-        <label for="price">price</label>
-        <input type="number" name="art[price]" id="price" value="<%= art.price %>">
-        <!-- <label for="image">image</label>
-        <input type="file" name="image" id="image" multiple> -->
+        <!-- <label for="image">Add image</label>
+        <input type="file" name="image" id="image" class="form-input"  multiple> -->
+
+
         <label for="description">description</label>
-        <textarea name="art[description]" id="description" cols="5" rows="5" class="w-50 p-3"><%= art.description %></textarea>
-
-        <button class="btn btn-success btn-block">Update</button>
+        <textarea name="art[description]" id="description" cols="5" rows="5" class="w-50 p-3 form-input" ><%= art.description %></textarea>
+<hr>
+        <button class="button button-white">Update</button>
 
     </div>
 </form>
-    </div>

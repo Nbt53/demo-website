@@ -9,7 +9,6 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
-    basket: [],
     admin: {
        type: String,
        required: false

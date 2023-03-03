@@ -1,43 +1,82 @@
-.global-nav {
-    text-align: center;
-    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.46), transparent);
+.navbar {
+    font-size: $font-size-smaller;
+    text-transform: uppercase;
+    background-color: white;
+    letter-spacing: 1px;
 
-    .nav-link {
-        font-size: $font-size-smaller;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: inline-block;
-        font-weight: 700;
-        color: $color-text-dark-2;
-        box-shadow: none;
-        text-shadow: $shadow-default;
-        animation: none;
-        margin: 2rem;
-        background-color: transparent;
-        text-shadow: $shadow-default;
+    &-brand {
+        background-color: black;
+        background-clip: content-box;
+    }
+
+    &-logo {
+        width: 2rem;
+    }
+
+    &-user {
+        margin-right: 0 !important;
+    }
+
+    .nav-item {
 
         &:hover {
-            text-shadow: 1px 1px 8px rgb(228, 230, 242);
+            text-decoration: underline 1px black;
         }
+
     }
 }
 
-.header-logo {
-    height: 50px;
-    float: left;
-    margin-top: 25px;
-    filter: drop-shadow(0 5px 2px $color-shadow);
+// .navbar {
+//     width: 100%;
 
-    &:hover {
-        animation: logo-hover .2s;
-    }
-}
+//     &-row {
+//         padding: 1rem;
+//         padding-bottom: .1rem;
+//         padding-top: 0;
+//         margin: unset;
+//         width: 100%;
+//         text-align: center;
+//         border-bottom: 2px solid black;
+//     }
+
+//     &-col{
+//         padding: 0 1px;
+//         display: inline-block;
+//         width: 45%;
+//     }
+
+//     &-logo {
+//         text-align: left;
+//         width: 10%;
+//         padding: .2rem;
+
+//         &-logo {
+//             max-width: 2rem;
+//         }
+
+//     }
+
+//     &-nav {
+//         align-self: center;
+//         border-left: 1px solid black;
+//         border-right: 1px solid black;
+
+//     }
+
+//     &-user {
+//         align-self: center;
+//         float: right;
+//         padding-right: 0;
+//     }
+
+//     &-link {
+//         font-size: 1rem;
+//         font-weight: 600;
+//         text-decoration: none;
+//         color: $color-text-dark;
+//         display: inline;
+//         margin: .5rem;
 
 
-
-.user-buttons {
-    float: right;
-    width: fit-content;
-
-    .nav-link {}
-}
+//     }
+// }

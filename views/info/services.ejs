@@ -1,37 +1,54 @@
 <% layout('layouts/global') %>
-<div class="header ">
-<%- include('../partials/globalNav') %>
+    <section class="services">
 
-<section class="services">
+        <h2 class="secondary-title services-title">Services</h2>
 
-    <h2 class="secondary-title services-title">Services</h2>
+        <div class="row services-body">
+            <div class="services-col services-description">
+                <p class="services-text">Wether it's digital portraits, a print of my art, graphic design or just an
+                    interpretation of an image, we can give you a quote for the work.
+                    Fill out the form on the other side and hit send and i'll get back to you asap.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eos, debitis architecto fugiat
+                    ea placeat saepe, provident voluptates porro facilis cumque tempore quod reprehenderit tempora atque
+                    unde rem, non temporibus?
+                  
+               
+                </p>
 
-    <form action="/services" method="POST" class="services-form" enctype="multipart/form-data">
+            </div>
+            <div class="services-col">
+                <form action="/services" method="POST" class="services-form" enctype="multipart/form-data">
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="services-inputs" required>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="services-inputs" required placeholder="Name">
 
-        <label for="email">E-mail:</label>
-        <input type="email" name="email" id="email" class="services-inputs" required>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" class="services-inputs" required placeholder="E-Mail">
 
-        <label for="description" class="services-inputs" required>description:</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <label for="description" class="services-inputs" required>description:</label>
+                    <textarea name="description" id="description" cols="20" rows="10">Let me know what you want, attach any images for reference try to be as detailed as possible for an accurate quote.
+            </textarea>
 
-        <label for="image">Upload Image:</label>
-        <input type="file" name="image" id="image">
-        
-
-        <button class="button button-white">Submit</button>
-    </form>
-   
-</section>
+                    <label for="image">Upload Image:</label>
+                    <input type="file" name="image" id="image">
 
 
+                    <button class="button button-white">Submit</button>
+                </form>
 
-<!-- add pricing and descriptions
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+    <!-- add pricing and descriptions
  -->
 
-  <!-- <div class="row">
+    <!-- <div class="row">
         <div class="col-1-of-3">
             <div class="component-card">
                 <div class="card-header card-header-1"> </div>
@@ -69,4 +86,3 @@
             </div>
         </div>
     </div> -->
-  

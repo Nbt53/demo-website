@@ -19,12 +19,11 @@ const sendMail = (name, email, description, url, filename) => {
         html: `name: ${name}<br>email: ${email}<br>Description: ${description}<br><img src="${url}" alt="${filename}">`,
      
       };
-    transporter.sendMail(mailOptions, function(err, data) {
+    transporter.sendMail(mailOptions, function(err, data, req) {
         if (err) {
-            req.flash('error', 'Something went wrong')
           console.log("Error " + err);
         } else {
-            req.flash('success', 'request sent');
+            
         }
       });
 }

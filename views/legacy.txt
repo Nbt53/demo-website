@@ -46,3 +46,62 @@
             </div>
 
              -->
+
+             NAVBAR
+             
+<nav class="global-nav">
+    <div class="global-nav-nav">
+        <img src="/images/lovebirdlogo-white.png" alt="logo" class="header-logo">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/art" class="nav-link">Gallery</a>
+        <a href="/services" class="nav-link">Services</a>
+    </div>
+    <div class="user-buttons">
+        <% if(currentUser && currentUser.admin==='on' ){ %>
+            <a href="/art/new" class="nav-link">New art</a>
+            <a href="/admin" class="nav-link">Admin</a>
+            <% } %>
+
+                <% if(!currentUser){ %>
+                    <a href="#signup" class="nav-link">signup</a>
+                    <a href="#login" class="nav-link">login</a>
+                    <% } %>
+                        <% if(currentUser){ %>
+                            <a href="/logout" class="nav-link">Logout</a>
+                            <% } %>
+    </div>
+</nav>
+
+
+more navbar
+
+<div class="navbar">
+    <div class="row navbar-row ">
+        <div class="navbar-logo ">
+            <img src="/images/lovebirdlogo-white.png" alt="logo" class="navbar-logo-logo">
+        </div>
+        <div class="navbar-nav navbar-col">
+            <a href="/" class="navbar-link">Home</a>
+            <a href="/art" class="navbar-link">Gallery</a>
+            <a href="/services" class="navbar-link">Services</a>
+        </div>
+        <div class="navbar-user navbar-col">
+            <% if(currentUser && currentUser.admin==='on' ){ %>
+                <a href="/art/new" class="navbar-link">New art</a>
+                <a href="/admin" class="navbar-link">Admin</a>
+                <% } %>
+
+                    <% if(!currentUser){ %>
+                        <a href="#signup" class="navbar-link">signup</a>
+                        <a href="#login" class="navbar-link">login</a>
+                        <% } %>
+                            <% if(currentUser){ %>
+                                <a href="/logout" class="navbar-link">Logout</a>
+                                <% } %>
+        </div>
+    </div>
+</div>
+
+
+
+

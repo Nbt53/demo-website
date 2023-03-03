@@ -1,22 +1,53 @@
-<nav class="global-nav">
-    <img src="/images/lovebirdlogo-white.png" alt="logo" class="header-logo">
-    <a href="/" class="nav-link">Home</a>
-    <a href="/art" class="nav-link">Gallery</a>
-    <a href="/services" class="nav-link">Services</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="/images/lovebirdlogo-white.png" alt="logo" class="navbar-logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/art">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services">Services</a>
+        </li>
 
-    <div class="user-buttons">
+
+      </ul>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-user">
+
         <% if(currentUser && currentUser.admin==='on' ){ %>
-            <a href="/art/new" class="nav-link">New art</a>
-            <a href="/admin" class="nav-link">Admin</a>
-            <% } %>
+          <li class="nav-item">
+            <a class="nav-link" href="/art/new">new Art</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+          </li>
+          <% } %>
 
-                <% if(!currentUser){ %>
-                    <a href="#signup" class="nav-link">signup</a>
-                    <a href="#login" class="nav-link">login</a>
-                    <% } %>
-                        <% if(currentUser){ %>
-                            <a href="/logout" class="nav-link">Logout</a>
-                            <% } %>
+            <% if(!currentUser){ %>
+              <li class="nav-item">
+                <a class="nav-link" href="#signup">Signup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#login">Sign in</a>
+              </li>
+              <% } %>
+                <% if(currentUser){ %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log out</a>
+                  </li>
+                  <% } %>
+
+
+      </ul>
+
     </div>
+  </div>
 </nav>
-

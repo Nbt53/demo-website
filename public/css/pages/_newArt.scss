@@ -1,0 +1,45 @@
+.new-title{
+    margin: 3rem;
+}
+
+.new {
+text-align: center;
+    form {
+        display: inline-block;
+        background-color: $color-background-light;
+        width: 40%;
+        text-align: center;
+       
+        border-radius: 5px;
+        padding: 2rem 0;
+    }
+
+
+    &-input {
+        font-size: $font-size-small;
+        
+       label{
+        text-transform: capitalize;
+       }
+
+        input {
+            margin: 0 auto;
+            max-width: 50%;
+        }
+
+        textarea {
+            margin: 0 auto;
+            max-width: 50%;
+        }
+
+        .button-dark {
+            margin: 1rem auto;
+            border-radius: 5px;
+            width: 50%;
+            text-decoration: none;
+            border: none;
+
+        }
+    }
+
+}

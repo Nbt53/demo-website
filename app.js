@@ -11,11 +11,15 @@ const path = require('path');
 const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash')
 const methodOverride = require('method-override');
+const mongoSanitize = require('express-mongo-sanitize');
 // passport for log in
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const User = require('./models/users')
-const joi = require('joi')
+const User = require('./models/users');
+const joi = require('joi');
+const helmet = require("helmet");
+const { whiteList } = require('./whiteList');
+const db = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI ;
 
 const port = 3000;
 
@@ -39,6 +43,33 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(methodOverride('_method'))
+app.use(mongoSanitize());
+
+
+
+
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: [],
+      connectSrc: ["'self'", ...whiteList],
+      scriptSrc: ["'self'", ...whiteList],
+      styleSrc: ["'self'", ...whiteList],
+      workerSrc: ["'self'", "blob:"],
+      objectSrc: [],
+      imgSrc: [
+        "'self'",
+        "blob:",
+        "data:",
+        "https://res.cloudinary.com/djj2nhj8d/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
+        "https://images.unsplash.com/"
+      ],
+      fontSrc: ["'self'","https://fonts.gstatic.com/"],
+      mediaSrc: ["https://res.cloudinary.com/dv5vm4sqh/"],
+      childSrc: ["blob:"]
+    }
+  })
+);
 
 //flash middleware
 app.use(flash());
@@ -71,19 +102,16 @@ app.use(express.static(__dirname + '/public'));
 const infoRoutes = require('./routes/info');
 const artRoutes = require('./routes/art');
 const userRoutes = require('./routes/users');
-const basketRoutes = require('./routes/basket');
-
 
 // mongoose setup
 mongoose.set({ strictQuery: true });
-mongoose.connect('mongodb://127.0.0.1:27017/art')
+mongoose.connect(db)
   .then(() => console.log('Connected!'));
 
 /// use routes
 app.use('/', infoRoutes);
 app.use('/art', artRoutes);
 app.use('/', userRoutes);
-app.use('/basket', basketRoutes);
 
 
 app.all('*', (req, res, next) => {

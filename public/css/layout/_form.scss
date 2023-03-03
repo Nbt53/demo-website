@@ -1,10 +1,14 @@
-.services {
+.edit-title{
+    margin: 2rem 0;
+}
 
+.form {
     &-body {
         background-color: rgba($color-background-light, .8);
         padding: 1rem;
         border-radius: 2px;
         box-shadow: $shadow-default;
+        text-align: center;
     }
 
     &-title {
@@ -12,36 +16,27 @@
         margin: 3rem 0;
     }
 
-    &-col{
+    &-col {
         padding-top: 1rem;
         width: 50%;
         display: inline-block;
     }
 
-    &-description{
-     text-align: center;
-     margin-right: 0;
-       
-    }
-
-    &-text{
-        font-size: $font-size-small;
-        columns: 2;
-        column-rule: 1px solid $color-text-light-2;
-        justify-self: center;
-    }
-
-    &-form {
-        text-align: center;
-        border-left: 1px solid black;
-    }
+&-input{
+    width: 40%;
+    margin: 0 auto;
+}
 
     label {
         display: block;
     }
 
+    hr{
+        border: unset;
+    }
     button {
-        display: block;
+        width: 30%;
+        display: inline-block;
         margin: 1rem auto;
     }
 
