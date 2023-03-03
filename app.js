@@ -19,7 +19,7 @@ const User = require('./models/users');
 const joi = require('joi');
 const helmet = require("helmet");
 const { whiteList } = require('./whiteList');
-const dbUrl = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI;
+const dbUrl = process.env.DB_URI || 'mongodb://127.0.0.1:27017/art' ;
 
 const port = 3000;
 
