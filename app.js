@@ -19,7 +19,7 @@ const User = require('./models/users');
 const joi = require('joi');
 const helmet = require("helmet");
 const { whiteList } = require('./whiteList');
-const db = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI;
+const dbUrl = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI;
 
 const port = 3000;
 
@@ -104,9 +104,18 @@ const artRoutes = require('./routes/art');
 const userRoutes = require('./routes/users');
 
 // mongoose setup
-mongoose.set({ strictQuery: true });
-mongoose.connect(db)
-  .then(() => console.log('Connected!'));
+mongoose.connect(dbUrl), {
+  addNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+}
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', () => {
+  console.log('database connected')
+})
 
 /// use routes
 app.use('/', infoRoutes);
