@@ -123,9 +123,9 @@ app.use('/art', artRoutes);
 app.use('/', userRoutes);
 
 
-app.all('*', (req, res, next) => {
-  next(new ExpressError('Page not found', 404))     /// throws error on any url that is'nt correct(404)
-})
+// app.all('*', (req, res, next) => {
+//   next(new ExpressError('Page not found', 404))     /// throws error on any url that is'nt correct(404)
+// })
 
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
