@@ -5,7 +5,6 @@
 }
 
 body {
-  margin: 1rem;
   position: relative;
   z-index: -1;
 }
@@ -323,6 +322,7 @@ main {
 }
 
 .navbar {
+  z-index: 20;
   font-size: 1.5rem;
   text-transform: uppercase;
   background-color: white;
@@ -364,7 +364,7 @@ main {
   transition: all 0.4s;
 }
 .composition-image:hover {
-  transform: scale(110%) translateY(-1.1rem);
+  transform: scale(105%) translateY(-1.1rem);
   box-shadow: 0 20px 20px rgba(5, 6, 15, 0.2);
   z-index: 20;
   outline: 2px #087E8B solid;
@@ -378,7 +378,7 @@ main {
   max-width: 20rem;
   position: absolute;
   top: 2rem;
-  left: -2rem;
+  left: -4rem;
 }
 .composition-image-3 {
   max-width: 20rem;
@@ -883,6 +883,9 @@ main {
   letter-spacing: 10px;
 }
 
+.services {
+  margin: 1.5rem;
+}
 .services-body {
   background-color: rgba(221, 231, 238, 0.8);
   padding: 1rem;
@@ -922,6 +925,16 @@ main {
   margin: 1rem auto;
 }
 
+@media (max-width: 800px) {
+  .services-text {
+    font-size: 1.2rem;
+    -moz-columns: unset;
+         columns: unset;
+  }
+  .services-form {
+    padding-left: 1rem;
+  }
+}
 .show-image {
   max-width: 100%;
   height: 100%;
