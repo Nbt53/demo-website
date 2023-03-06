@@ -1011,4 +1011,20 @@ main {
   width: 50%;
   text-decoration: none;
   border: none;
+}
+
+@media (max-width: 800px) {
+  .new form {
+    width: 80%;
+  }
+  .new label {
+    margin-bottom: 0.5rem;
+  }
+  .new input {
+    margin-bottom: 1rem;
+    max-width: 80%;
+  }
+  .new-input {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=app.css.map */
