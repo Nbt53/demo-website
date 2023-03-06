@@ -20,7 +20,7 @@ const joi = require('joi');
 const helmet = require("helmet");
 const { whiteList } = require('./whiteList');
 //const dbUrl = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI;
-const dbUrl =  process.env.DB_URI;
+const dbUrl = process.env.DB_URI;
 
 const port = 3000;
 
@@ -72,7 +72,7 @@ app.use(
         "https://res.cloudinary.com/djj2nhj8d/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
         "https://images.unsplash.com/"
       ],
-      fontSrc: ["'self'","https://fonts.gstatic.com/"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com/"],
       mediaSrc: ["https://res.cloudinary.com/dv5vm4sqh/"],
       childSrc: ["blob:"]
     }
