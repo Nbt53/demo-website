@@ -21,11 +21,19 @@ const helmet = require("helmet");
 const { whiteList } = require('./whiteList');
 //const dbUrl = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI;
 const dbUrl = process.env.DB_URI;
+const MongoStore = require('connect-mongo')
+
 
 const port = 3000;
 
 secret = 'Smidgion';
 
+mongoose.connect(dbUrl), {
+  addNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+}
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
@@ -33,11 +41,24 @@ db.once('open', () => {
   console.log('database connected')
 })
 
+const store = new MongoStore({
+  mongoUrl: dbUrl,
+  crypto:{
+  secret: secret
+},
+  touchAfter: 24 * 60 * 60   // in seconds
+})
+
+store.on('error', function (e) {
+  console.log('Store error', e)
+})
+
 // to parse objects
 app.use(express.urlencoded({ extended: true }));
 
 //config up sessions
 const sessionConfig = {
+  store,
   secret: secret,
   resave: false,
   saveUninitialized: true,
