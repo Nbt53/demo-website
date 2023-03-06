@@ -19,11 +19,19 @@ const User = require('./models/users');
 const joi = require('joi');
 const helmet = require("helmet");
 const { whiteList } = require('./whiteList');
-const dbUrl = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI;
+//const dbUrl = 'mongodb://127.0.0.1:27017/art' || process.env.DB_URI;
+const dbUrl =  process.env.DB_URI;
 
 const port = 3000;
 
 secret = 'Smidgion';
+
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', () => {
+  console.log('database connected')
+})
 
 // to parse objects
 app.use(express.urlencoded({ extended: true }));
@@ -111,11 +119,6 @@ mongoose.connect(dbUrl), {
   useFindAndModify: false
 }
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error'));
-db.once('open', () => {
-  console.log('database connected')
-})
 
 /// use routes
 app.use('/', infoRoutes);
@@ -123,9 +126,9 @@ app.use('/art', artRoutes);
 app.use('/', userRoutes);
 
 
-// app.all('*', (req, res, next) => {
-//   next(new ExpressError('Page not found', 404))     /// throws error on any url that is'nt correct(404)
-// })
+app.all('*', (req, res, next) => {
+  next(new ExpressError('Page not found', 404))     /// throws error on any url that is'nt correct(404)
+})
 
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
