@@ -1,6 +1,5 @@
 <% layout('layouts/global') %>
     <div class="header">
-        <%- include('./partials/globalNav') %>
             <div class="row">
                 <div class="error-title">
                     Oopsie doopsy, Somthing went wrong
@@ -14,10 +13,10 @@
                                 <%= err.message %>
                             </h4>
                             <p>
-                                <% if (process.env.NODE_ENV !=="production" ) {%>
+                                <!-- <% //if (process.env.NODE_ENV !=="production" ) {%> -->
                                     <%= err.stack %>
                                     <% console.log(err) %>
-                                        <% } %>
+                                        <!-- <//% } %> -->
                             </p>
                             <hr>
                             <p class="mb-0">Status code: <%= err.status %>

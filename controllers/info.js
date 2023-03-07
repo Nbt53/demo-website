@@ -24,9 +24,9 @@ module.exports.admin = async (req, res) => {
 }
 
 module.exports.updateUser = async (req, res) => {
-    let { username, email, admin, _id , basket} = req.body
-    if(!admin){
-        admin= 'off'
+    let { username, email, admin, _id, basket } = req.body
+    if (!admin) {
+        admin = 'off'
     }
     _id = _id.replace(/\s+/g, '');
     const updated = { username, email, admin, basket }
@@ -34,10 +34,10 @@ module.exports.updateUser = async (req, res) => {
     res.redirect('/admin')
 }
 
-module.exports.sendForQuote = async (req, res) =>{   
-    const {name, email, description} = req.body;
-    let file = await req.files.map(f => ({ url: f.path, filename: f.filename }))   
-    sendMail(name, email, description, file[0].url, file[0].name)  
+module.exports.sendForQuote = async (req, res) => {
+    const { name, email, description } = req.body;
+    let file = await req.files.map(f => ({ url: f.path, filename: f.filename }))
+    sendMail(name, email, description, file[0].url, file[0].name)
     const contact = new Contact(req.body)
     contact.image = file
     await contact.save()
