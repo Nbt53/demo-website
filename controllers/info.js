@@ -37,7 +37,7 @@ module.exports.updateUser = async (req, res) => {
 module.exports.sendForQuote = async (req, res) => {
     const { name, email, description } = req.body;
     let file = await req.files.map(f => ({ url: f.path, filename: f.filename }))
-    sendMail(name, email, description, file[0].url, file[0].name)
+   // sendMail(name, email, description, file[0].url, file[0].name)
     const contact = new Contact(req.body)
     contact.image = file
     await contact.save()
