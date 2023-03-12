@@ -2,6 +2,7 @@ const Art = require("../models/art")
 const User = require("../models/users")
 const Contact = require("../models/contact")
 const { transporter, sendMail } = require("../nodemailer/nodemailer")
+const { request } = require("express")
 
 
 module.exports.home = async (req, res) => {
@@ -43,4 +44,9 @@ module.exports.sendForQuote = async (req, res) => {
     await contact.save()
     req.flash('success', 'Request sent')
     res.redirect('/services')
+}
+
+module.exports.showRequests =async (req, res) => {
+    const contact = await Contact.find({})
+    res.render('requests', {contact})
 }

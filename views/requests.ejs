@@ -1,0 +1,35 @@
+<% layout('layouts/global') %>
+
+
+    <section class="admin">
+        <% console.log(contact) %>
+            <% for(c of contact){ %>
+                <div class="admin-user">
+                    <form action="/admin?_method=PUT" method="POST">
+                        <div class="sign-form row">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" value="<%= c.name %>">
+
+                            <label for="email ">E-mail</label>
+                            <input type="email" name="email" id="email" value="<%= c.email %>">
+
+                            <label for="email ">request</label>
+                            <%= c.description %>
+                           <% let n = 0 %> 
+                            <% for (i of c.image){ %>
+
+                                <% console.log (i.url) %>
+                                    <img src="<%= i.url %>" alt="">
+                                  <% n++ %>  
+                                    <% } %>
+
+
+
+                                        <button class="btn btn-success btn-block">Edit</button>
+
+                        </div>
+                    </form>
+                </div>
+                <% } %>
+    </section>
+    </div>

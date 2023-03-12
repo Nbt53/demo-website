@@ -21,4 +21,7 @@ router.route('/admin')
     .get(isLoggedIn, isAdmin, catchAsync(info.admin))
     .put(isLoggedIn, isAdmin, catchAsync(info.updateUser))
 
+    router.route('/requests')
+    .get(isLoggedIn, isAdmin, catchAsync(info.showRequests))
+
 module.exports = router
