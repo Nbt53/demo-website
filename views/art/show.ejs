@@ -1,31 +1,34 @@
 <% layout('layouts/global') %>
-            <div class="show">
-                <div class="secondary-title show-title u-margin-bottom-medium">
-                    <%= art.title %>
-                </div>
-                <div class="row">
+    <div class="show">
+        <div class="secondary-title show-title u-margin-bottom-medium">
+            <%= art.title %>
+        </div>
+        <div class="row show-row">
 
-                    <div class="col-1-of-2">
+            <div class="col-1-of-2 show-col">
 
-                       <a href="<%= art.image[0].url %>" target="__blank"> <img class="show-image" src="<%= art.image[0].url %>" alt=""></a>
+                <a href="<%= art.image[0].url %>" target="__blank"> <img class="show-image"
+                        src="<%= art.image[0].url %>" alt=""></a>
 
-                    </div>
-                    <div class="col-1-of-2">
-                        <div class="show-info">
-                            <div class="show-price">£<%= art.price %>
-                            </div>
-                            <div class="show-description">
-                                <%= art.description %>
-                            </div>
-                            
-                            <form class="show-forms" action="/art/<%= art.id %>?_method=DELETE" method="POST">
-                                <button class="btn btn-danger show-button">Delete</button>
-                            </form>
-                     
-                            <form class="show-forms" action="/art/<%= art.id %>/edit" method="GET">
-                                <button class="btn btn-danger show-button">Edit</button>
-                            </form>
+            </div>
+            <div class="col-1-of-2 show-col">
+                <div class="show-info-wrapper">
+                    <div class="show-info">
+                        <div class="show-price">£<%= art.price %>
                         </div>
+                        <div class="show-description">
+                            <%= art.description %>
+                        </div>
+
+                        <form class="show-forms" action="/art/<%= art.id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger show-button">Delete</button>
+                        </form>
+
+                        <form class="show-forms" action="/art/<%= art.id %>/edit" method="GET">
+                            <button class="btn btn-danger show-button">Edit</button>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>

@@ -1,30 +1,52 @@
-.show{
+.show {
 
-    &-image{
-       max-width: 100%;
-       height: 100%;
-       margin: 0 auto;
+    &-image {
+        max-width: 100%;
+        height: 100%;
+        margin: 0 auto;
     }
 
-    &-info{
+    &-info {
         background-color: rgba(255, 255, 255, 0.4);
         height: 100%;
     }
-    &-price{
+
+    &-price {
         font-size: $font-size-large;
         text-align: center;
-        margin-bottom: 2rem;    
+        margin-bottom: 2rem;
     }
 
-    &-description{
+    &-description {
         font-size: $font-size-small;
         margin: 0 1rem;
-        float:left
+        float: left
     }
 
-    &-button{
-        margin: 2rem ;
-       float: left;
-        
+    &-button {
+        margin: 2rem;
+        float: left;
+
+    }
+}
+
+@media(max-width:750px) {
+    .show {
+        &-row {
+            position: unset;
+        }
+
+        &-col {
+            float: none;
+            display: contents;
+        }
+
+        &-image {
+            padding: 0 2rem;
+        }
+        &-info-wrapper{
+            padding: 2rem;
+        }
+
     }
 }

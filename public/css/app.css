@@ -959,6 +959,21 @@ main {
   float: left;
 }
 
+@media (max-width: 750px) {
+  .show-row {
+    position: unset;
+  }
+  .show-col {
+    float: none;
+    display: contents;
+  }
+  .show-image {
+    padding: 0 2rem;
+  }
+  .show-info-wrapper {
+    padding: 2rem;
+  }
+}
 .admin {
   text-align: center;
 }
