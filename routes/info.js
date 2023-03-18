@@ -12,7 +12,7 @@ router.route('/')
 
 router.route('/services')
     .get(info.services)
-    .post(upload.array('image') , catchAsync(info.sendForQuote))
+    .post(upload.array('image'), catchAsync(info.sendForQuote))
 
 router.route('/about')
     .get(info.about)
@@ -21,7 +21,11 @@ router.route('/admin')
     .get(isLoggedIn, isAdmin, catchAsync(info.admin))
     .put(isLoggedIn, isAdmin, catchAsync(info.updateUser))
 
-    router.route('/requests')
-    .get(isLoggedIn, isAdmin, catchAsync(info.showRequests))
+router.route('/requests')
+    .get(isLoggedIn, isAdmin, catchAsync(info.requestsIndex))
+
+router.route('/requests/:id')
+    .get(isLoggedIn, isAdmin, catchAsync(info.showRequest) )
+    .delete(isLoggedIn, isAdmin, catchAsync(info.deleteRequest) )
 
 module.exports = router

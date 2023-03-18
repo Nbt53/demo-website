@@ -2,7 +2,7 @@ const Art = require("../models/art")
 const User = require("../models/users")
 const Contact = require("../models/contact")
 const { transporter, sendMail } = require("../nodemailer/nodemailer")
-const { request } = require("express")
+const { findById } = require("../models/art")
 
 
 module.exports.home = async (req, res) => {
@@ -46,7 +46,19 @@ module.exports.sendForQuote = async (req, res) => {
     res.redirect('/services')
 }
 
-module.exports.showRequests =async (req, res) => {
+module.exports.requestsIndex =async (req, res) => {
     const contact = await Contact.find({})
-    res.render('requests', {contact})
+    res.render('requests/index', {contact})
+}
+
+module.exports.showRequest = async (req, res) =>{
+const request = await Contact.findById(req.params.id)
+res.render('requests/show', {request})
+}
+
+module.exports.deleteRequest = async (req, res) => {
+    const { id } = req.params
+    await Contact.findByIdAndDelete(id)
+    req.flash('success', 'Successfully deleted art')
+    res.redirect('/requests')
 }

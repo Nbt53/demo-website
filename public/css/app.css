@@ -1027,4 +1027,52 @@ main {
   .new-input {
     font-size: 1.2rem;
   }
+}
+.contact {
+  height: 100vh;
+  overflow-y: scroll;
+  padding-bottom: 10rem;
+}
+.contact form {
+  display: contents;
+}
+.contact a {
+  display: contents;
+}
+.contact-info {
+  background-color: aliceblue;
+  margin-bottom: 1rem;
+}
+.contact-info-request {
+  height: 3rem;
+  overflow: hidden;
+}
+.contact-request {
+  height: 30rem;
+  padding-bottom: 30rem;
+}
+.contact-request-image {
+  width: 90%;
+}
+.contact-request-image-container {
+  justify-content: center;
+  width: 18rem;
+  height: 10rem;
+}
+.contact-request-button {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.contact-show-info {
+  padding: 2rem;
+}
+.contact-show-description {
+  font-size: 1.7rem;
+}
+.contact-show-buttons {
+  margin-top: 4rem;
+}
+.contact-show-buttons button {
+  display: block;
 }/*# sourceMappingURL=app.css.map */

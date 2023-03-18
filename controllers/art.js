@@ -39,6 +39,7 @@ module.exports.editPost = async (req, res) => {
 module.exports.delete = async (req, res) => {
     const { id } = req.params
     await Art.findByIdAndDelete(id)
-    req.flash('success', 'Successfully deleted art')
+    req.flash('success', 'Successfully deleted')
     res.redirect('/art')
 }
+

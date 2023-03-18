@@ -12,6 +12,7 @@ const path = require('path');
 const flash = require('connect-flash')
 const methodOverride = require('method-override');
 const mongoSanitize = require('express-mongo-sanitize');
+const ExpressError = require('./utils/ExpressError');
 // passport for log in
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -132,6 +133,7 @@ const infoRoutes = require('./routes/info');
 const artRoutes = require('./routes/art');
 const userRoutes = require('./routes/users');
 
+
 // mongoose setup
 mongoose.connect(dbUrl), {
   addNewUrlParser: true,
@@ -147,9 +149,9 @@ app.use('/art', artRoutes);
 app.use('/', userRoutes);
 
 
-// app.all('*', (req, res, next) => {
-//   next(new ExpressError('Page not found', 404))     /// throws error on any url that is'nt correct(404)
-// })
+app.all('*', (req, res, next) => {
+  next(new ExpressError('Page not found', 404))     /// throws error on any url that is'nt correct(404)
+})
 
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;

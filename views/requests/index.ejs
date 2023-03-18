@@ -1,0 +1,47 @@
+<% layout('layouts/global') %>
+
+
+    <section class="admin contact">
+            <% for(c of contact){ %>
+
+                <div class="admin-user contact-request">
+
+                    <div class="sign-form row">
+
+                        <label for="name">Username:</label>
+                        <div class="contact-info" id="name">
+                            <%= c.name %>
+                        </div>
+
+                        <label for="email ">E-mail:</label>
+                        <div class="contact-info" id="email">
+                            <%= c.email %>
+                        </div>
+
+                        <label for="description ">Request:</label>
+                        <div class="contact-info contact-info-request" id="email">
+                            <%= c.description %>
+                        </div>
+
+                        <% let n=0 %>
+                            <div class="contact-request-image-container">
+                                <% for (i of c.image){ %>
+                                        <img class="contact-request-image" src="<%= i.url %>" alt="">
+                                        <% n++ %>
+                                            <% } %>
+
+                            </div>
+                            
+                               <a href="/requests/<%= c._id %>"><button class="btn btn-success btn-block contact-request-button">View</button></a> 
+                           
+                            <form action="/requests/<%= c._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger btn-block contact-request-button">Delete</button>
+                            </form>
+
+
+                    </div>
+
+                </div>
+                <% } %>
+    </section>
+    </div>

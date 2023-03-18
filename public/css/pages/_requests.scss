@@ -1,0 +1,65 @@
+.contact {
+
+    form {
+        display: contents;
+    }
+
+    a {
+        display: contents;
+    }
+
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 10rem;
+
+    &-info {
+        background-color: aliceblue;
+        margin-bottom: 1rem;
+
+        &-request {
+            height: 3rem;
+            overflow: hidden;
+        }
+    }
+
+    &-request {
+        height: 30rem;
+        padding-bottom: 30rem;
+
+        &-image {
+            width: 90%;
+
+
+            &-container {
+                justify-content: center;
+                width: 18rem;
+                height: 10rem;
+            }
+        }
+
+        &-button {
+            width: 40%;
+            margin: 0 auto;
+            margin-top: 2rem;
+        }
+    }
+
+    &-show {
+
+        &-info {
+            padding: 2rem;
+        }
+
+        &-description {
+            font-size: $font-size-small;
+        }
+
+        &-buttons{
+          margin-top: 4rem;
+
+            button{
+           display: block;
+            }
+        }
+    }
+}
