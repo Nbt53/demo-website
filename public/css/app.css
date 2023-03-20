@@ -935,12 +935,17 @@ main {
     padding-left: 1rem;
   }
 }
+.show-row {
+  height: 90vh;
+  width: 90%;
+}
 .show-image {
   max-width: 100%;
-  height: 100%;
   margin: 0 auto;
+  box-shadow: 0 10px 10px rgba(5, 6, 15, 0.2);
 }
 .show-info {
+  display: inline-block;
   background-color: rgba(255, 255, 255, 0.4);
   height: 100%;
 }
@@ -958,6 +963,9 @@ main {
   margin: 2rem;
   float: left;
 }
+.show-title {
+  margin-top: 2rem;
+}
 
 @media (max-width: 750px) {
   .show-row {
@@ -968,7 +976,11 @@ main {
     display: contents;
   }
   .show-image {
-    padding: 0 2rem;
+    max-width: 90%;
+    margin: 0 2rem;
+  }
+  .show-info {
+    background-color: rgba(255, 255, 255, 0.4);
   }
   .show-info-wrapper {
     padding: 2rem;
@@ -1081,6 +1093,7 @@ main {
 }
 .contact-show-info {
   padding: 2rem;
+  width: 100%;
 }
 .contact-show-description {
   font-size: 1.7rem;
